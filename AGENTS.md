@@ -7,7 +7,7 @@
 
 ## 目录职责
 
-- `.agents/skills/`：外部技能通过安装工具更新，不直接改上游内容；`relationship-content` 是本项目自有总控技能，可按项目需求维护。
+- `.agents/skills/`：外部技能通过安装工具更新，不直接改上游内容；`relationship-content` 是本项目自有总控技能，`jiejie-illustrations` 是基于 Ian Xiaohei Illustrations 的项目派生技能，二者可按项目需求维护。Ian 原版单独保留，派生版保留来源与许可。
 - `engine/`：从已安装技能复制出的本项目运行时；只为适配本项目目录和品牌配置而改，不反向修改 `.agents/skills/`。
 - `research/`：事实链、来源台账和检索记录；原始来源与日期必须保留。
 - `episodes/`：每期视频的口播、分镜、素材清单、代码工程和生成物。

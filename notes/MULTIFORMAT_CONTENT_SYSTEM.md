@@ -24,6 +24,8 @@ Gemini 从简报直接生成内容母稿，保留原始初稿。母稿记录事�
 
 ## 改编与技能路由
 
+最新视觉路由：公众号封面使用 guizang-social-card-skill（Editorial 横版与方版独立构图），不使用 Punk；正文配图使用项目派生 jiejie-illustrations，不直接运行 Ian 原版的小黑角色规则。解解保持原年轻化漫画比例、去发夹、不成人化。具体确认状态见 BRAND_POSITIONING.md 和 WECHAT_VISUAL_STYLE_SYSTEM.md。
+
 关系题材图文按 notes/BRACKET_NARRATIVE_FORMAT.md 的原创括号叙事语法设计。归藏提供 Editorial 页面结构与渲染工具，不代表项目全篇采用上下双格漫画模板。
 
 | 交付 | 内容设计 | 主路由 |

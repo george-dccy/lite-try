@@ -21,7 +21,7 @@ description: 在 lite_try 项目中把关系与处世创意编排为公众号文
 
 ## 路由要点
 
-文章写作与配文用已安装 Creator Buddy 子技能；公众号排版用 gzh-design；文字卡片用 guizang-social-card-skill；插画提示词用 hand-drawn，再交可用生图工具。cy-carousel 只在适合其 AI 科技笔记体裁时使用。微信图文变现技能仅在明确提出商业化任务时调用。
+文章写作与配文用已安装 Creator Buddy 子技能；公众号排版用 gzh-design；公众号封面与文字卡片用 guizang-social-card-skill；正文插画默认用项目派生 jiejie-illustrations，再交内置生图工具。hand-drawn 仅用于明确指定的其他画风。解解保留年轻化漫画比例，去掉发夹，不做成人化；识别符号按 BRAND_POSITIONING.md 的确认状态执行。cy-carousel 只在适合其 AI 科技笔记体裁时使用。微信图文变现技能仅在明确提出商业化任务时调用。
 
 用户已要求自动化，常规尺寸、主题推荐和目录选择自行处理；创意拍板保留。上游固定科技配色、强制模板页数和与项目冲突的工作区路径不覆盖品牌及用户意图。
 
