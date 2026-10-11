@@ -1,6 +1,6 @@
 ---
 name: relationship-content
-description: 在 lite_try 项目中把关系与处世创意编排为公众号文章、文字配图卡片、Huashu 视频或图片故事。用于今天做什么、新关系创意、一题多种内容或整套生产；先形成候选卡，选题确认后生产指定形式。
+description: 在 lite_try 项目中把关系与处世创意编排为公众号文章、文字配图卡片、Huashu 视频、图片故事或关系贴图。贴图/图片消息/小绿书请求优先路由到 yuguang-sticker-bridge，通过 Notion MCP 实时读取“余光所及”机制；其他形式先形成候选卡，选题确认后生产指定形式。
 ---
 
 # 关系与处世内容总控
@@ -11,6 +11,14 @@ description: 在 lite_try 项目中把关系与处世创意编排为公众号文
 
 宽泛请求研究后给三张候选卡。每卡说明具体读者、场景、一个困惑、单一交付、材料与可迁移样本机制。用户选择后再写长稿和生成媒体；明确“做这个”视为已选择。整套输出四种形式；单一形式请求只制作该形式。
 
+### 贴图 Fast Lane
+
+如果用户明确要求“贴图”“公众号图片消息”“小绿书”“关系场景图片组”“用余光所及做这个关系题”或用轻图文做冷启动/选题验证，**不要先走上述完整候选卡 → 母稿流程**。
+
+改为加载 `.agents/skills/yuguang-sticker-bridge/SKILL.md` 与 `notes/NOTION_YUGUANG_STICKER_BRIDGE.md`，通过 Notion MCP 实时读取专用 Notion Skill，再由它调用当前“余光所及”现行机制。仓库只提供关系目的与测试输入，不复制或缓存视觉机制正文。
+
+贴图验证后需要升级成长文章、卡片或视频时，才回到本 Skill 的常规生产线，并将贴图表现作为选题材料之一，而不是把一次高数据直接当成结论。
+
 ## 执行
 
 1. 保存内容简报，区分真实材料、个人观点和演绎场景。平台研究走 Agent Reach 当前路由，样本拆解按 Creator Buddy 接入文档。
@@ -19,9 +27,13 @@ description: 在 lite_try 项目中把关系与处世创意编排为公众号文
 4. 视频以 huashu-art-motion 为主，先镜头表和检查，再 Visual Master Sheet 与单镜头包，按声音实际时长对齐。语音读取当前 Huashu narrator 绑定，不写死旧 ID。H3 使用真实动态片段。
 5. 各形式按上游检查及实际目检验收，产物保存至 episodes/、build/，通过后导出 outputs/ 的新版本。
 
+上述常规执行步骤不适用于已经命中“贴图 Fast Lane”的请求；贴图按 `yuguang-sticker-bridge` 的执行与交付规则完成。
+
 ## 路由要点
 
 文章写作与配文用已安装 Creator Buddy 子技能；公众号排版用 gzh-design；公众号封面与文字卡片用 guizang-social-card-skill；正文插画默认用项目派生 jiejie-illustrations，再交内置生图工具。hand-drawn 仅用于明确指定的其他画风。解解保留年轻化漫画比例，去掉发夹，不做成人化；识别符号按 BRAND_POSITIONING.md 的确认状态执行。cy-carousel 只在适合其 AI 科技笔记体裁时使用。微信图文变现技能仅在明确提出商业化任务时调用。
+
+公众号贴图、图片消息和小绿书式关系轻图文不默认使用上述文字卡片/插画路由；命中贴图 Fast Lane 时，由 Notion 中当前“余光所及”机制决定人物、场景、摄影、Prompt 与成图质量门。
 
 用户已要求自动化，常规尺寸、主题推荐和目录选择自行处理；创意拍板保留。上游固定科技配色、强制模板页数和与项目冲突的工作区路径不覆盖品牌及用户意图。
 
