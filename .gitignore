@@ -1,0 +1,28 @@
+# 编译与运行中间产物
+build/
+dist/
+temp/
+tmp/
+
+# 依赖包
+node_modules/
+.npm/
+
+# 日志
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 系统与编辑器缓存
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# 敏感与临时配置
+*.local
+.env
+.env.*
+!.env.example

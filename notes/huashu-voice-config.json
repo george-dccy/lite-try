@@ -1,0 +1,11 @@
+{
+  "preferences": {
+    "voice": {
+      "mode": "clone",
+      "voice_ref": "narrator"
+    }
+  },
+  "onboarding": {
+    "voice": "manual"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "reportDate": "2026-10-10",
+  "startDate": "2026-09-26",
+  "generatedAt": "2026-10-10T20:57:52",
+  "source": "公众号爆款文章洞察-SkillHub",
+  "sectors": [
+    {
+      "name": "短剧",
+      "keywords": [
+        "绿泡泡",
+        "红果短剧",
+        "微短剧"
+      ],
+      "items": [],
+      "errors": [
+        "绿泡泡: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)",
+        "红果短剧: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)",
+        "微短剧: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)"
+      ]
+    },
+    {
+      "name": "AI眼镜",
+      "keywords": [
+        "AI眼镜",
+        "智能眼镜",
+        "AI市集"
+      ],
+      "items": [],
+      "errors": [
+        "AI眼镜: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)",
+        "智能眼镜: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)",
+        "AI市集: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)"
+      ]
+    },
+    {
+      "name": "智能消费",
+      "keywords": [
+        "人工智能+消费",
+        "智能家居",
+        "智能产品"
+      ],
+      "items": [],
+      "errors": [
+        "人工智能+消费: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)",
+        "智能家居: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)",
+        "智能产品: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)"
+      ]
+    }
+  ]
+}
