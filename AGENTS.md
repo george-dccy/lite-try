@@ -2,7 +2,7 @@
 
 ## 项目目标
 
-这是“余光所及｜有解”的本地关系与处世内容生产项目：主要面向成人，从朋友、家庭、职场和亲子中的具体难题出发，形成文章、文字卡片、视频、图片故事和用于冷启动/选题验证的关系贴图。定位真源为 notes/BRAND_POSITIONING.md。
+这是“余光所及｜有解”的本地关系与处世内容生产项目：主要面向成人，从朋友、家庭、职场、亲子以及人与自己/世界相处中的具体难题出发，形成文章、文字卡片、视频、图片故事和用于冷启动/选题验证的双格观察卡。定位真源为 notes/BRAND_POSITIONING.md。
 当前首期高德 ETA 只作为已停止的实验样片，不代表项目长期内容范围。
 
 ## 目录职责
@@ -12,13 +12,13 @@
 - `research/`：事实链、来源台账和检索记录；原始来源与日期必须保留。
 - `episodes/`：每期视频的口播、分镜、素材清单、代码工程和生成物。
 - `build/`：渲染中间产物；可清理，不作为发布交付。
-- `outputs/`：通过验收后导出的成片、字幕、封面和发布包；旧版本不覆盖。`outputs/stickers/` 专门保存关系贴图发布包，不镜像 Notion 机制正文。
+- `outputs/`：通过验收后导出的成片、字幕、封面和发布包；旧版本不覆盖。`outputs/stickers/` 专门保存双格观察卡/贴图发布包，不镜像 Notion 机制正文。
 - `notes/`：本项目方法论融合、决策和待确认事项。
 - `notes/BRAND_POSITIONING.md`：品牌定位、内容母题、三类内容、IP 和新任务启动契约；属于本项目上层约束。
 - `notes/TOPIC_SELECTION_SYSTEM.md`：项目级正式选题机制与选题卡真源；长文章、视频、系统化卡片等新题先经过这里的入口、材料和读者价值门禁。
 - `notes/CREATOR_BUDDY_ADAPTER.md`：Creator Buddy 选题、爆款拆解、标题、口播和 B-roll 能力在本项目的接入规则。
 - `notes/MULTIFORMAT_CONTENT_SYSTEM.md`：一题多种内容的流程、技能路由与交付标准；关系题材优先按此执行。
-- `notes/NOTION_YUGUANG_STICKER_BRIDGE.md`：关系贴图 Fast Lane 的 Notion 入口、调用失败边界与输出契约；只保存连接信息，不复制视觉机制。
+- `notes/NOTION_YUGUANG_STICKER_BRIDGE.md`：双格观察卡 Fast Lane 的 Notion 入口、调用失败边界与输出契约；只保存连接信息和产物边界，不复制视觉机制或完整版式语法。
 
 ## 工作边界
 
@@ -28,8 +28,10 @@
 - 每次改动只运行与改动相关的检查；通过后停止，和本次无关的失败单独记录。
 - 任何新内容先检查 `notes/BRAND_POSITIONING.md`，不要把单期题材当成账号定位。
 - 常规正式选题先检查 `notes/TOPIC_SELECTION_SYSTEM.md`；没有明确读者、单一交付和可核验材料时，不进入长稿、口播或系统化制作。
-- **关系贴图 Fast Lane 是例外入口**：当用户明确要求贴图、公众号图片消息、小绿书式轻图文或冷启动测试时，直接路由 `yuguang-sticker-bridge`，不强制先走完整正式选题卡或母稿。贴图被验证值得放大后，再回常规选题与多形态生产线。
-- 贴图视觉机制不在仓库维护。命中 Fast Lane 后必须通过 Notion MCP 实时 fetch `notes/NOTION_YUGUANG_STICKER_BRIDGE.md` 指向的 Notion Skill，并按它继续读取“余光所及”现行机制；Notion 不可用时停止，不用本地旧 Prompt 或模型记忆兜底。
+- **双格观察卡 Fast Lane 是例外入口**：当用户明确要求贴图、公众号图片消息、小绿书式轻图文、双格卡或冷启动测试时，直接路由 `yuguang-sticker-bridge`，不强制先走完整正式选题卡或母稿。卡片被验证值得放大后，再回常规选题与多形态生产线。
+- Fast Lane 的默认单位是 **3–6 张独立双格观察卡 / 双格洞察卡**，不是必须连续阅读的一条剧情。每张卡应能单独表达完整意思，上下两格之间有明确对照、转折、递进或互文；格内可以使用风格化大字与极短补充。
+- 双格卡的视觉和完整版式机制不在仓库维护。命中 Fast Lane 后必须通过 Notion MCP 实时 fetch `notes/NOTION_YUGUANG_STICKER_BRIDGE.md` 指向的 Notion Skill，并按它继续读取“余光所及”现行机制；Notion 不可用时停止，不用本地旧 Prompt 或模型记忆兜底。
+- Notion Skill 已经内置本项目需要的双格版式设计方法；运行时**不再为了版式访问 `yang0/handraw-style`、外部网页或其他模板仓库**。
 - 写长稿前，若存在可访问的同赛道样本，必须先按 `notes/CREATOR_BUDDY_ADAPTER.md` 完成开头、节奏、口播和画面拆解。
 
 ## 当前视频路线
@@ -47,4 +49,4 @@
 
 用户只需说“想一个关于 X 的视频”“今天做什么”或“来一个新创意”。常规内容由 Agent 先按 `notes/TOPIC_SELECTION_SYSTEM.md` 研究并形成候选选题卡：宽泛请求默认给 3 张，明确要求一张候选卡时给 1 张。用户拍板后才进入 Gemini 初始口播、事实核对、去 AI 味、Visual Master Sheet 和生产；不要在用户没拍板前擅自进入长稿、配音、H3 或渲染。
 
-如果请求明确包含“贴图”“图片消息”“小绿书”“用余光所及做关系图”“今天发几条轻图文”等意图，则跳过上述常规启动，直接调用 `yuguang-sticker-bridge`。用户给出明确关系题时直接做；用户只说“今天做贴图”时，按 Notion Skill 的轻量候选规则处理。
+如果请求明确包含“贴图”“图片消息”“小绿书”“双格卡”“双格观察卡”“用余光所及做这个题”“今天发几条轻图文”等意图，则跳过上述常规启动，直接调用 `yuguang-sticker-bridge`。用户给出明确生活/关系主题时直接做；用户只说“今天做贴图”时，按 Notion Skill 的轻量候选规则处理。
