@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>排版正文_橄榄手记(olive) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;padding:8px;box-sizing:border-box;background:#fdfdf8;color:#4d4f46;font-family:'IBM Plex Sans',-apple-system,system-ui,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;line-height:1.75;">
+
+  <!-- 1. 头图卡 hero-card（组件 2） -->
+  <section style="background:#fdfdf8;border:1px solid #bfc1b7;border-radius:6px;overflow:hidden;font-family:'IBM Plex Sans',-apple-system,system-ui,sans-serif;">
+    <section style="padding:28px 24px 22px;">
+      <section style="display:flex;align-items:center;gap:8px;margin-bottom:22px;">
+        <span style="width:8px;height:8px;background:#1e1f23;border-radius:50%;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+        <span style="font-size:10px;font-weight:700;letter-spacing:3px;color:#65675e;"><span leaf="">余光所及 · 观察手记</span></span>
+        <span style="flex:1;height:1px;background:#bfc1b7;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+        <span style="font-size:10px;color:#9ea096;font-weight:500;font-variant-numeric:tabular-nums;"><span leaf="">ISSUE #01 · 2026</span></span>
+      </section>
+      <section style="display:flex;align-items:stretch;gap:18px;">
+        <section style="flex:1;min-width:0;">
+          <p style="font-size:22px;font-weight:800;color:#23251d;margin:0 0 10px;line-height:1.25;letter-spacing:-0.5px;">
+            <span leaf="">平时联系不多的老朋友</span><span style="color:#4d4f46;"><span leaf="">&nbsp;·&nbsp;</span></span><span style="border-bottom:3px solid #ed7b2f;"><span leaf="">怎么聊才自然</span></span>
+          </p>
+          <section style="display:flex;align-items:center;gap:4px;margin-bottom:12px;">
+            <span style="width:22px;height:3px;background:#1e1f23;border-radius:2px;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+            <span style="width:8px;height:3px;background:#bfc1b7;border-radius:2px;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+          </section>
+          <p style="font-size:13px;color:#65675e;margin:0;line-height:1.7;"><span leaf="">面对断档多年的旧交情，如何放下无用社交的顾虑，在日常相聚里把话说得舒服、让关系走下去。</span></p>
+        </section>
+        <section style="flex-shrink:0;width:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#eeefe9;border:1px dashed #bfc1b7;border-radius:6px;padding:6px;">
+          <svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="display:block;">
+            <circle cx="32" cy="32" r="24" fill="none" stroke="#4d4f46" stroke-width="2"></circle>
+            <path d="M24 28 Q32 20 40 28" fill="none" stroke="#ed7b2f" stroke-width="2.5"></path>
+            <circle cx="28" cy="36" r="2.5" fill="#1e1f23"></circle>
+            <circle cx="36" cy="36" r="2.5" fill="#1e1f23"></circle>
+          </svg>
+          <span style="font-size:8px;font-weight:700;color:#9ea096;letter-spacing:1px;margin-top:4px;"><span leaf="">RELATION</span></span>
+        </section>
+      </section>
+    </section>
+    <section style="background:#1e1f23;padding:11px 24px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+      <p style="font-size:12px;color:rgba(255,255,255,0.92);margin:0;font-weight:600;"><span leaf="">核心解法：放平预期 · 多听少探 · 并排同行 · 借小事跟进</span></p>
+      <section style="display:flex;gap:6px;flex-wrap:wrap;">
+        <span style="background:#e5e7e0;color:#23251d;padding:3px 8px;border-radius:4px;font-size:8px;font-weight:700;border:1px solid #bfc1b7;"><span leaf="">成年人友谊</span></span>
+        <span style="background:#e5e7e0;color:#23251d;padding:3px 8px;border-radius:4px;font-size:8px;font-weight:700;border:1px solid #bfc1b7;"><span leaf="">处世分寸</span></span>
+      </section>
+    </section>
+  </section>
+
+  <!-- 前言段落 -->
+  <section style="margin-top:24px;">
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">中秋国庆长假这几天，我抽空去见了几个老朋友。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">去见朋友的路上，同行的一位朋友和他的女朋友在一旁随口闲聊。他们聊到有些以前关系挺好的老同学、旧同事，因为隔了有好些年没见，心里多少有些犯难。朋友叹了口气说，这么多年不来往，各自过着完全不同的日子，突然再凑到一起真不知道该聊些什么，总觉得这种重逢很可能会变成一场</span><span style="border-bottom:2px solid #ed7b2f;font-weight:600;color:#23251d;"><span leaf="">无话可说的无用社交</span></span><span leaf="">，想想就觉得心里有负担。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">坐在旁边听着，我特别能理解他们的顾虑。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">人到了某个年纪，面对一段断档多年的旧交情，心里往往都会打鼓。有人形容这种状态叫“极熟又极生疏，深了不是，浅了又不是”。两个人明明曾经那么熟悉，可中间隔着好几年的生活空白，谁也拿不准当年的默契还在不在。很多人因此在见面前，就</span><span style="border-bottom:2px solid #ed7b2f;font-weight:600;color:#23251d;"><span leaf="">先自我退缩</span></span><span leaf="">，以为长时间不联系是因为彼此冷淡，甚至以为对方也会觉得见面是种打扰。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">但实际上早有人发现，人们在犹豫要不要联系老朋友时，往往过度沉浸在自己害怕尴尬的防御心理中，却严重低估了对方收到问候时那种由衷的惊喜。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">对方大概率和你一样，心里也在暗暗期待，只是谁都担心开口第一句不知道怎么说，或是怕聊得尴尬，把过往的美好都掩盖掉了。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">带着这样的心思，我和老朋友们碰了面。那天我们的安排其实很简单，主要就是带着孩子去景点走走，然后再找个地方一起吃顿便饭。</span></p>
+  </section>
+
+  <!-- 重点观点卡 callout-key-takeaway（组件 9） -->
+  <section style="margin-top:24px;">
+    <section style="background:#eeefe9;border:1px solid #bfc1b7;border-left:4px solid #ed7b2f;border-radius:6px;padding:16px 20px;font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <p style="font-size:11px;font-weight:800;color:#23251d;margin:0 0 6px;letter-spacing:1px;"><span leaf="">核心观察 · TAKEAWAY</span></p>
+      <p style="font-size:14px;color:#23251d;margin:0;line-height:1.8;font-weight:600;">
+        <span leaf="">多年没见的老朋友，想要聊得自然，根本不需要靠大张旗鼓的煽情，也不需要逼着自己做一场完美的人生汇报。</span>
+      </p>
+    </section>
+  </section>
+
+  <!-- 章节 01（组件 3） -->
+  <section style="margin-top:32px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <section style="display:flex;align-items:center;gap:14px;">
+        <section style="text-align:center;flex-shrink:0;">
+          <p style="margin:0;font-size:24px;font-weight:800;color:#23251d;line-height:1;letter-spacing:-2px;"><span leaf="">01</span></p>
+          <p style="margin:0;font-size:8px;font-weight:700;color:#9ea096;letter-spacing:2px;"><span leaf="">PART</span></p>
+        </section>
+        <span style="width:1px;height:36px;background:#bfc1b7;flex-shrink:0;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+        <section>
+          <p style="margin:0 0 1px;font-size:17px;font-weight:800;color:#23251d;letter-spacing:0.2px;"><span leaf="">多年没见，不用急着在一顿饭里补齐这些年</span></p>
+          <p style="margin:0;font-size:11px;font-weight:600;color:#65675e;letter-spacing:1.2px;"><span leaf="">交谈有留白 · 唤醒信任底色</span></p>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  <section style="margin-top:20px;">
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">很多成年人之所以害怕见老朋友，是因为给自己暗暗设了一个很重的心理包袱：觉得中间隔了五年、十年，一坐下来就必须抓紧把这些年发生的大事小情全给对方交代清楚。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">一旦带着这种心态坐下，饭局就会立刻变成一场紧绷的“人生答辩”。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">那天我们刚坐下的时候，大家其实谁也没急着去聊那些沉甸甸的近况。大家顺口提起的，都是以前一起在工作地方吃路边摊、喝啤酒的旧事，还有当年在学校里一起生活的那些琐碎记忆。谁提起了当年的一个老梗，大家相视一笑，当年的那种神态和语气一下子就回来了。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">怀旧并不代表停留在过去。在老朋友重逢的开场，共同回忆其实是一块最好的“缓冲垫”。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">两个人隔了那么久，现实生活早就千差万别，如果一上来就硬聊当下的境遇，往往很难迅速</span><span style="border-bottom:2px solid #ed7b2f;font-weight:600;color:#23251d;"><span leaf="">聊到一起去</span></span><span leaf="">。而那些共同经历过的事情，是你们之间天然的信任底色。提起当年的糗事，哪怕只是短短十分钟，也是在向彼此确认一件最重要的事：眼前的这个人，依然是当年那个知根知底的旧友。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">当这个底色被重新唤醒，心里的防备卸下来了，两个人自然就不用急着在一顿饭的工夫里，把各自走过的弯路、受过的委屈一口气全补齐。来日方长，交谈有留白，相处才不会累。</span></p>
+  </section>
+
+  <!-- 章节 02（组件 3） -->
+  <section style="margin-top:32px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <section style="display:flex;align-items:center;gap:14px;">
+        <section style="text-align:center;flex-shrink:0;">
+          <p style="margin:0;font-size:24px;font-weight:800;color:#23251d;line-height:1;letter-spacing:-2px;"><span leaf="">02</span></p>
+          <p style="margin:0;font-size:8px;font-weight:700;color:#9ea096;letter-spacing:2px;"><span leaf="">PART</span></p>
+        </section>
+        <span style="width:1px;height:36px;background:#bfc1b7;flex-shrink:0;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+        <section>
+          <p style="margin:0 0 1px;font-size:17px;font-weight:800;color:#23251d;letter-spacing:0.2px;"><span leaf="">聊聊现在的生活，关心但绝不刨根问底</span></p>
+          <p style="margin:0;font-size:11px;font-weight:600;color:#65675e;letter-spacing:1.2px;"><span leaf="">避开世俗盘问 · 多听少探</span></p>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  <section style="margin-top:20px;">
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">从过去的回忆过渡到当下的生活，是老朋友重逢最考验分寸的地方。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">大家如今所处的圈子不同了，收入、地位、生活境遇或多或少都有了差距。如果话题没选对，关心很容易在不经意间滑向“查户口式的打探”，让人顿生戒备。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">很多人聊天时习惯顺嘴问：“你现在一年能挣多少？”“职务提了没有？”“房子买在哪个地段了？”这些问题看似在关心近况，本质上却是在用世俗的尺子给老朋友重新归类。谁在生活里没有一两件焦头烂额的事？如果把老友聚会搞得像职场考核，谁都会本能地关上心门。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">真正的关心，从来都是关注人本身的心情，而且随时给对方留足退路。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">你可以问问他当下的日常：“最近工作节奏累不累？”“看你前阵子朋友圈总在出差，后来缓过来没有？”或者聊聊以前共同认识的熟人近况、最近吃了什么好吃的馆子。如果聊到某段工作时，对方只是笑笑顺口带过一句“害，就那样，瞎忙”，那就体贴地顺着他的话聊聊眼前的饭菜，绝不刨根问底地追问。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">那天整场饭局里，主要是我媳妇和朋友们在热火朝天地聊着家长里短，我自己大部分时间只是坐在旁边听。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">年轻的时候聚会，总觉得自己该多讲两句、多抖两个包袱调动气氛；但那一天，安安静静地听着那些熟悉的声音在耳边说笑着，我心里觉得前所未有的踏实。成年人最舒服的关系，往往不是争抢着倾诉，而是哪怕你坐在旁边只是静静地听着，也不用担心被冷落，更不会觉得有丝毫的不自在。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span style="border-bottom:2px solid #ed7b2f;font-weight:600;color:#23251d;"><span leaf="">多听，少探究隐私，就是对老朋友最深的体面。</span></span></p>
+  </section>
+
+  <!-- 章节 03（组件 3） -->
+  <section style="margin-top:32px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <section style="display:flex;align-items:center;gap:14px;">
+        <section style="text-align:center;flex-shrink:0;">
+          <p style="margin:0;font-size:24px;font-weight:800;color:#23251d;line-height:1;letter-spacing:-2px;"><span leaf="">03</span></p>
+          <p style="margin:0;font-size:8px;font-weight:700;color:#9ea096;letter-spacing:2px;"><span leaf="">PART</span></p>
+        </section>
+        <span style="width:1px;height:36px;background:#bfc1b7;flex-shrink:0;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+        <section>
+          <p style="margin:0 0 1px;font-size:17px;font-weight:800;color:#23251d;letter-spacing:0.2px;"><span leaf="">一起做点手头事，生疏自然就散了</span></p>
+          <p style="margin:0;font-size:11px;font-weight:600;color:#65675e;letter-spacing:1.2px;"><span leaf="">并排同行 · 视线朝向第三方</span></p>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  <section style="margin-top:20px;">
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">除了说话的分寸，那天的重逢能那么顺畅，还有一个很重要的原因——我们谁也没傻坐在那里面对面硬熬。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">很多时候，成年人感到冷场和生硬，是因为把见面死死锁在了“面对面紧盯着对方”的场景里。两个人面对面坐着，两双眼睛直愣愣地对视，一旦话题断了，空气里就只剩下找话题的压迫感。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">但那天到了地方之后，我们这群大人的心思基本上全在孩子身上。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">小朋友们虽然也是好久没见，甚至彼此原本并不熟悉，但孩子没有大人的心理包袱，凑到一起很自然地就玩开了。其实我也观察到一个很有趣的现象，孩子们往往比大人更容易聊到一起。他们原本可能并不熟悉，但是见了面之后很快就像老朋友一样，聊得很开，甚至很快站在了同一阵营，互相打掩护，形成了小团队。我觉得这个对比对大人来讲真的是一个非常好的参照。也许我们正是失去了那时的童心，才导致了我们有那么多的担心和困扰。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">大人们跟在后面，视线全都在前头跑跑跳跳的孩子身上。走在景点的小路上，大家边走边随口照应两句：“慢点跑，小心台阶”“渴不渴，喝口水”。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">视线有了共同的着落，身体在走动，那些原本可能存在的生疏感，不知不觉就散了。大家不需要绞尽脑汁去打破沉默，哪怕各自安静地走上一段路，气氛也是流动而松弛的。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">其实就算没有孩子，或者朋友之间是两个人在异地碰面，也是同样的道理。不要把自己锁在过于严肃死板的环境里。一起挑挑菜单、一起在老街上并排溜达溜达、一起喝杯咖啡看看街景，</span><span style="border-bottom:2px solid #ed7b2f;font-weight:600;color:#23251d;"><span leaf="">身体并排同行永远比面对面紧盯要轻松得多</span></span><span leaf="">。手头有具体的事情在做，哪怕不说话，也是一种舒服的陪伴。</span></p>
+  </section>
+
+  <!-- 章节 04（组件 3） -->
+  <section style="margin-top:32px;">
+    <section style="font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <section style="display:flex;align-items:center;gap:14px;">
+        <section style="text-align:center;flex-shrink:0;">
+          <p style="margin:0;font-size:24px;font-weight:800;color:#23251d;line-height:1;letter-spacing:-2px;"><span leaf="">04</span></p>
+          <p style="margin:0;font-size:8px;font-weight:700;color:#9ea096;letter-spacing:2px;"><span leaf="">PART</span></p>
+        </section>
+        <span style="width:1px;height:36px;background:#bfc1b7;flex-shrink:0;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+        <section>
+          <p style="margin:0 0 1px;font-size:17px;font-weight:800;color:#23251d;letter-spacing:0.2px;"><span leaf="">散场以后，给下一次联系留个具体由头</span></p>
+          <p style="margin:0;font-size:11px;font-weight:600;color:#65675e;letter-spacing:1.2px;"><span leaf="">轻量动作 · 不较劲的默契</span></p>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  <section style="margin-top:20px;">
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">相聚的时间总是过得飞快，一顿饭、半天闲逛，一转眼的工夫就到了该各自赶路的时候。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">很多老朋友聚会，散场时往往都会习惯性地说一句：“下次再聚啊！”可往往也就是这一句轻飘飘的客套，成了往后好几年再次断联的句号。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">心里明明很珍视这份旧情，但成年人往往又怕话说得太满、太郑重，显得刻意甚至矫情。毕竟大家都有沉甸甸的日常要扛，谁也承诺不了隔三差五就能聚上一场。</span></p>
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:0 0 16px;"><span leaf="">想让友情自然地流淌下去，其实只需要在相聚和散场后留下一两个轻量、具体的小动作：</span></p>
+
+    <!-- 卡片手记条目（组件 10 变形） -->
+    <section style="background:#eeefe9;border:1px solid #bfc1b7;border-radius:6px;padding:14px 16px;margin:14px 0;">
+      <p style="font-size:13px;font-weight:800;color:#23251d;margin:0 0 6px;"><span leaf="">动作一：借着聚会里聊到的小事，随手发个跟进</span></p>
+      <p style="font-size:13px;color:#4d4f46;margin:0;line-height:1.7;"><span leaf="">回到家后发一条微信：“今天那家馆子真挺合胃口。对了，刚才饭桌上你聊到的那个降噪耳机/咖啡豆，方便把链接发我一下吗？”一句具体的小事，既让聚会有了回响，又给了彼此一个毫无压力的互动窗口。</span></p>
+    </section>
+
+    <section style="background:#eeefe9;border:1px solid #bfc1b7;border-radius:6px;padding:14px 16px;margin:14px 0;">
+      <p style="font-size:13px;font-weight:800;color:#23251d;margin:0 0 6px;"><span leaf="">动作二：备点小礼物，见面破冰、散场留痕</span></p>
+      <p style="font-size:13px;color:#4d4f46;margin:0;line-height:1.7;"><span leaf="">我们聚会前都准备了给朋友和他们孩子的小礼物。见面时，可以很快打开话题，快速进入氛围。结束以后，这些互送的小礼物也是日后生活里的触点。临走前大家互相带点当地特产、给孩子买点小零食，不用贵重，心意到了就好。过几天打开包装尝尝，随手拍张照片发过去：“今天尝了你带的点心，甜度刚好，老人都夸好吃。”生活琐碎里的这一声回应，远比空洞的问候来得真切。</span></p>
+    </section>
+
+    <section style="background:#eeefe9;border:1px solid #bfc1b7;border-radius:6px;padding:14px 16px;margin:14px 0;">
+      <p style="font-size:13px;font-weight:800;color:#23251d;margin:0 0 6px;"><span leaf="">动作三：给下一次见面一个明确的时空，而非虚浮口号</span></p>
+      <p style="font-size:13px;color:#4d4f46;margin:0;line-height:1.7;"><span leaf="">与其说“有空多走动”，不如说“等年底回老家，咱们再去吃校门口那家羊肉”。给交情留一个看得见的锚点，它就不会在日复一日的忙碌里轻易沉没。</span></p>
+    </section>
+
+    <p style="font-size:14px;color:#4d4f46;line-height:1.9;margin:16px 0;"><span leaf="">当然，如果散场后对方因为忙于生计回复得慢了，也不用内耗，更不用觉得交情又淡了。各自安好，把自己的日子过踏实，本身就是成年人交往的一种默契。</span></p>
+  </section>
+
+  <!-- 黑底结语卡 quote-dark-card（组件 11） -->
+  <section style="margin-top:28px;">
+    <section style="background:#1e1f23;border-radius:6px;padding:24px 22px;border:1px solid #23251d;color:#fff;font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <p style="font-size:10px;letter-spacing:3px;color:#ed7b2f;font-weight:700;margin:0 0 8px;text-transform:uppercase;"><span leaf="">POSTSCRIPT · 结语</span></p>
+      <p style="font-size:16px;font-weight:700;margin:0 0 14px;line-height:1.6;color:#ffffff;">
+        <span leaf="">所谓老朋友，就是各自前行，偶尔回眸彼此都在。</span>
+      </p>
+      <p style="font-size:13px;color:rgba(255,255,255,0.82);margin:0 0 12px;line-height:1.8;">
+        <span leaf="">那天告别的时候，看着车窗外渐渐倒退的街景，我心里有一种很平实的笃定。在日常里各自奔波的成年人，能有这么半天坐在一起，吃点平常的饭菜，回忆一阵年轻时的纯粹，聊聊眼前不咸不淡的日子，真的已经足够好了。</span>
+      </p>
+      <p style="font-size:13px;color:rgba(255,255,255,0.82);margin:0;line-height:1.8;">
+        <span leaf="">我后来也在想，到了这个年龄，家庭有太多事务，工作上也抽不开身，能够这样见一面，已经是不可多得的机会，不用奢求老友间的经常见面。能够聚一次就互相珍惜，体会一下那份不再拥有青春时对青春的感悟；如果见不到，也不用跟自己较劲。</span>
+      </p>
+    </section>
+  </section>
+
+  <!-- 尾部行动卡 cta-card（组件 27） -->
+  <section style="margin-top:24px;">
+    <section style="background:#eeefe9;border:1px solid #bfc1b7;border-radius:6px;padding:22px 20px;font-family:'IBM Plex Sans',-apple-system,sans-serif;text-align:center;">
+      <p style="font-size:10px;font-weight:700;color:#65675e;letter-spacing:2px;margin:0 0 6px;text-transform:uppercase;"><span leaf="">余光所及 ｜ 有解</span></p>
+      <p style="font-size:15px;font-weight:800;color:#23251d;margin:0 0 8px;"><span leaf="">平平常常，各自安好。</span></p>
+      <p style="font-size:12px;color:#65675e;margin:0 0 16px;line-height:1.6;"><span leaf="">只要彼此心里知道对方还在那儿，这份交情就一直都在。<br>记录普通人在关系里的困惑与相处之道。孩子懂相处，大人看见人。</span></p>
+      <section style="display:inline-block;background:#1e1f23;color:#ffffff;font-size:12px;font-weight:700;padding:8px 20px;border-radius:4px;letter-spacing:1px;">
+        <span leaf="">欢迎分享给那位久违的老朋友</span>
+      </section>
+    </section>
+  </section>
+
+</section>
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    var html=el.innerHTML;
+    var text=el.innerText;
+    var btn=document.getElementById('gzhCopyBtn');
+    var ok=false;
+    var handler=null;
+    var ta=document.createElement('textarea');
+    try{
+      // Write the original HTML directly to avoid browser range serialization
+      // injecting values such as text-align:start into the copied markup.
+      handler=function(e){
+        if(!e.clipboardData)return;
+        e.clipboardData.setData('text/html',html);
+        e.clipboardData.setData('text/plain',text);
+        e.preventDefault();
+      };
+      document.addEventListener('copy',handler,{once:true});
+      ta.value=text;
+      ta.setAttribute('readonly','');
+      ta.style.position='fixed';
+      ta.style.left='-9999px';
+      ta.style.top='0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      ok=document.execCommand('copy');
+    }catch(e){
+      ok=false;
+    }finally{
+      if(ta.parentNode)ta.parentNode.removeChild(ta);
+      if(handler)document.removeEventListener('copy',handler);
+    }
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 浏览器阻止复制，请换 Edge/Chrome 后重试');
+    }
+  }
+</script>
+</body>
+</html>
