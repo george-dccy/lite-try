@@ -1,52 +1,126 @@
-# lite_try 项目约定
+# 余光所及｜本地执行仓库约定
 
-## 项目目标
+Devin 是一名热爱技术的银行人，使用 Codex 做产品开发和知识管理。这里的工作目标不是把 Notion 的内容机制复制到本地，而是把已经在 Notion 确认的内容交接为可复现的渲染、配音、排版、整理和发布包。
 
-这是“余光所及｜有解”的本地关系与处世内容生产项目：主要面向成人，从朋友、家庭、职场、亲子以及人与自己/世界相处中的具体难题出发，形成文章、文字卡片、视频、图片故事和用于冷启动/选题验证的双格观察卡。定位真源为 notes/BRAND_POSITIONING.md。
-当前首期高德 ETA 只作为已停止的实验样片，不代表项目长期内容范围。
+## 项目定位
 
-## 目录职责
+本仓库是“余光所及”的本地执行仓库，服务三条内容线：
 
-- `.agents/skills/`：外部技能通过安装工具更新，不直接改上游内容；`relationship-content` 是本项目自有总控技能，`jiejie-illustrations` 是基于 Ian Xiaohei Illustrations 的项目派生技能，`yuguang-sticker-bridge` 是连接 Notion“余光所及”现行视觉机制的轻量桥接技能。项目自有技能可按项目需求维护；Ian 原版单独保留，派生版保留来源与许可。
-- `engine/`：从已安装技能复制出的本项目运行时；只为适配本项目目录和品牌配置而改，不反向修改 `.agents/skills/`。
-- `research/`：事实链、来源台账和检索记录；原始来源与日期必须保留。
-- `episodes/`：每期视频的口播、分镜、素材清单、代码工程和生成物。
-- `build/`：渲染中间产物；可清理，不作为发布交付。
-- `outputs/`：通过验收后导出的成片、字幕、封面和发布包；旧版本不覆盖。`outputs/stickers/` 专门保存双格观察卡/贴图发布包，不镜像 Notion 机制正文。
-- `notes/`：本项目方法论融合、决策和待确认事项。
-- `notes/BRAND_POSITIONING.md`：品牌定位、内容母题、三类内容、IP 和新任务启动契约；属于本项目上层约束。
-- `notes/TOPIC_SELECTION_SYSTEM.md`：项目级正式选题机制与选题卡真源；长文章、视频、系统化卡片等新题先经过这里的入口、材料和读者价值门禁。
-- `notes/CREATOR_BUDDY_ADAPTER.md`：Creator Buddy 选题、爆款拆解、标题、口播和 B-roll 能力在本项目的接入规则。
-- `notes/MULTIFORMAT_CONTENT_SYSTEM.md`：一题多种内容的流程、技能路由与交付标准；关系题材优先按此执行。
-- `notes/NOTION_YUGUANG_STICKER_BRIDGE.md`：双格观察卡 Fast Lane 的 Notion 入口、调用失败边界与输出契约；只保存连接信息和产物边界，不复制视觉机制或完整版式语法。
+- **有解｜关系与处世**：朋友、家庭、职场、亲子、人与自己和世界相处中的具体难题；
+- **世界机制故事**：科学、技术、历史、社会和经济中的机制，用故事或其他合适形式让理解发生变化；
+- **想象瞬间｜Edge of Sight**：用生图记录只改一条世界规则的空间与瞬间。
+
+Notion 是所有内容机制的唯一真源：想法、选题、写作、视频方法、贴图和生图都在 Notion 完成；仓库只接手必须用本地工具完成的执行环节，并把结果回填对应产物页。
+
+## 真源层级
+
+冲突时严格按以下顺序处理：
+
+1. 用户明确反馈；
+2. Notion 现行机制页；
+3. Notion 产物页中的 Brief、节拍表、全文和 Prompt；
+4. 本仓库执行规则；
+5. 上游技能；
+6. 工具上的便利。
+
+Notion 当前入口：
+
+- 导航：<https://app.notion.com/p/3d527110f8d581b3b3c2f53574559f94>（给人看的地图，不作为运行规则页）；
+- 工作台：<https://app.notion.com/p/3f727110f8d5813e9b22dbeff5ebdd9c>（S1–S5 总入口）；
+- 写作机制：<https://app.notion.com/p/3d727110f8d5816dbed0f5360d37014b>；
+- 创意视频机制：<https://app.notion.com/p/3f727110f8d5812da32dd21d59e30131>；
+- 有解贴图入口：<https://app.notion.com/p/3f627110f8d581918bf3de93e837a339>；
+- 生图运行协议 v4.0：<https://app.notion.com/p/3da27110f8d5819b835ac3154cec5e3a>；
+- 视频最小脚手架附录：<https://app.notion.com/p/3f727110f8d581409fc6efb83e348eb0>。
+
+所有 Notion 内容必须通过 Notion MCP 读取或写回。Notion 不可用、页面不可读或依赖缺失时，返回 `blocked`，不用仓库缓存、旧 Prompt 或模型记忆顶替。历史归档页不作为运行输入。
 
 ## 工作边界
 
-- 先事实和口播，再视觉主表/镜头包，再渲染；动画只执行已确定的画面和运动，不替事实源发明内容。
-- 外部来源、官方资料、截图和素材使用区间写入来源台账；未核实内容保留“待确认”，不当作事实。
-- 不自动公开发布，不提交密钥，不执行 `git push`。
-- 每次改动只运行与改动相关的检查；通过后停止，和本次无关的失败单独记录。
-- 任何新内容先检查 `notes/BRAND_POSITIONING.md`，不要把单期题材当成账号定位。
-- 常规正式选题先检查 `notes/TOPIC_SELECTION_SYSTEM.md`；没有明确读者、单一交付和可核验材料时，不进入长稿、口播或系统化制作。
-- **双格观察卡 Fast Lane 是例外入口**：当用户明确要求贴图、公众号图片消息、小绿书式轻图文、双格卡或冷启动测试时，直接路由 `yuguang-sticker-bridge`，不强制先走完整正式选题卡或母稿。卡片被验证值得放大后，再回常规选题与多形态生产线。
-- Fast Lane 的默认单位是 **3–6 张独立双格观察卡 / 双格洞察卡**，不是必须连续阅读的一条剧情。每张卡应能单独表达完整意思，上下两格之间有明确对照、转折、递进或互文；格内可以使用风格化大字与极短补充。
-- 双格卡的视觉和完整版式机制不在仓库维护。命中 Fast Lane 后必须通过 Notion MCP 实时 fetch `notes/NOTION_YUGUANG_STICKER_BRIDGE.md` 指向的 Notion Skill，并按它继续读取“余光所及”现行机制；Notion 不可用时停止，不用本地旧 Prompt 或模型记忆兜底。
-- Notion Skill 已经内置本项目需要的双格版式设计方法；运行时**不再为了版式访问 `yang0/handraw-style`、外部网页或其他模板仓库**。
-- 写长稿前，若存在可访问的同赛道样本，必须先按 `notes/CREATOR_BUDDY_ADAPTER.md` 完成开头、节奏、口播和画面拆解。
+- 先读取 Notion 产物页，再执行本地工作；不要在仓库重新写作或重建机制。
+- 真实经历、匿名改编和演绎场景分开标注；不编造人物、数据、引语、研究和发布结果。
+- 不自动公开发布，不执行 `git push`，不提交密钥、token、密码或参考音频。
+- 新任务先确认 Notion 产物页的 `仓库交接`；没有明确交接内容就不擅自开始制作。
+- 每次只运行与改动相关的验证；无关失败单独记录，不为“全绿”扩大修复范围。
+- `build/` 是可清理的中间产物；发布交付放 `outputs/` 或产物目录约定的位置，旧版本不覆盖。
 
-## 当前视频路线
+## 目录职责
 
-- 当前内容主线为关系与处世；科技题材存档保留，不自动续做 AI 眼镜。使用 `relationship-content` 编排一题多种内容，视频以 Huashu 为主。
+- `.agents/skills/`：项目自有技能入口与已安装上游技能。安装工具管理的技能不直接改上游内容；`wm-*` 入口指向 `world-mechanism/skills/`，不进入 `skills-lock.json`。
+- `engine/`：本仓库独有执行器，包括 `video-kit/`、`voice/` 和历史兼容的 `whiteboard-video/`。
+- `world-mechanism/`：合并保留的世界机制故事引擎；其子目录 `AGENTS.md` 继续有效，但受本文件和 Notion 现行机制约束。
+- `world-mechanism/renderers/art-motion/`：全仓共用的代码动效渲染器。保留在子目录原位，是为了保留上游相对路径、锁定文件和测试；新生产通过这个路径引用，不再复制一份到根目录。
+- `research/`：事实来源台账、视觉参考和研究证据；不存 Notion 机制正文副本。
+- `productions/<YYYY-MM-DD-slug>/`：新内容的统一生产目录。沿用 world-mechanism 的 `production.yaml`，额外要求 `content_line` 和 `notion_output_url` 两个字段。
+- `episodes/`：历史期目和旧实验，仅保留，不迁移到新的生产目录。
+- `build/`：渲染中间产物，可清理。
+- `outputs/`：验收后的成片、字幕、封面、贴图和发布包；`outputs/stickers/` 保存贴图发布包，不镜像 Notion 机制。
+- `notes/archive/2026-10-12/`：已由 Notion 接管的方法正文归档；原路径保留短指针，方便旧链接回溯。
 
-- 证据与流程借鉴 `investigation-video` / `video-common`。
-- 机制解释和动态画面借鉴 `whiteboard-video` 与 `huashu-art-motion`，优先使用可复现的代码动画。
-- 新选题先交给本机 Gemini CLI 生成初始口播；主 Agent 不先写一篇“研究说明”再让模型润色。
-- 成稿面向自媒体观众：先讲一件值得看完的事，不在口播里解释搜索过程、模型过程或 Agent 的责任边界；事实核对放在台账和制作门禁里。
-- 先定创意与 Visual Master Sheet，再按段选择 y2 Vox、t1 3B1B、y3 白板、真实图片/视频或 H3；H3 只执行确定的动作和时间，不重写故事、不生成文字。
-- 语音默认走 Huashu 当前的 clone 配置和已绑定 speaker；凭证只走临时环境变量，不进项目文件。
+## Notion 工作台路由
 
-## 新任务的简单启动
+宽泛请求改走 Notion 工作台 S1–S3：想法库 → 选题库 → KEEP / HOLD / REJECT。仓库不再生成本地候选卡。用户明确“做这个”时，从对应选题和产物页读取交接；没有拍板的候选不进入本地生产。
 
-用户只需说“想一个关于 X 的视频”“今天做什么”或“来一个新创意”。常规内容由 Agent 先按 `notes/TOPIC_SELECTION_SYSTEM.md` 研究并形成候选选题卡：宽泛请求默认给 3 张，明确要求一张候选卡时给 1 张。用户拍板后才进入 Gemini 初始口播、事实核对、去 AI 味、Visual Master Sheet 和生产；不要在用户没拍板前擅自进入长稿、配音、H3 或渲染。
+人工关口对应关系：
 
-如果请求明确包含“贴图”“图片消息”“小绿书”“双格卡”“双格观察卡”“用余光所及做这个题”“今天发几条轻图文”等意图，则跳过上述常规启动，直接调用 `yuguang-sticker-bridge`。用户给出明确生活/关系主题时直接做；用户只说“今天做贴图”时，按 Notion Skill 的轻量候选规则处理。
+- Creative Gate：选题库里的 `KEEP / HOLD / REJECT`；
+- Direction Gate：视频机制要求的三个差异化方案；
+- Prototype Gate：关键帧和小样；
+- Release Gate：用户审阅成片。
+
+## 具体生产路由
+
+### 贴图 / 双格观察卡
+
+走 `.agents/skills/yuguang-sticker-bridge/SKILL.md`，再通过 Notion MCP 读取有解贴图生成器。先在产物库落一条记录；标题和配文按写作机制 §8.1。Notion Skill 负责当前视觉、双格版式和生图规则；仓库只保存本轮输入、结果文件和 `sticker_manifest`。manifest 需要带 `notion_output_url`，并准确区分 `ready`、`prompt_ready` 和 `blocked`。
+
+### 公众号长文
+
+正文在 Notion 产物页按写作机制完成。仓库只做本地排版和素材装配：
+
+- `gzh-design`：16px 正文、约 1.85 行高、单列、内联样式、`span leaf` 节点和平台兼容校验；
+- `guizang-social-card-skill`：2.35:1 与 1:1 分开构图，并另起封面短标题；
+- `jiejie-illustrations`：正文约 3 张图，按转折而不是按章节平均分配；角色参考图路径见 `notes/VISUAL_IP_AND_ACCOUNT_NAME.md`；
+- 需要起草时可以调用本机 Gemini CLI，但方法、口吻和质检仍按 Notion 写作机制，成稿必须写回产物页。
+
+### 代码视频
+
+读取 Notion 创意视频机制，并读取产物页中的 Brief、节拍表和 `cues.json`。执行顺序固定为：关键帧 → 运动 → 声音 → 渲染 → 视频机制 §8 检查 → 另开会话独立评审 → 回填产物页。简单片从 `engine/video-kit/` 起步；复杂风格使用 `world-mechanism/renderers/art-motion/`。`huashu-art-motion`、`whiteboard-video` 和 `space-video-*` 只作参考，不再是默认主路线。配音继续使用 Huashu 当前绑定配置，凭证只通过临时环境变量注入。
+
+### 世界机制故事
+
+选题和创意前端先走 Notion 工作台 S2–S3；进入深度制作后，沿用 `world-mechanism` 的 Content Master → Video Concept → Director Proposal → `production.yaml` → art-motion → QA 流程。不要把世界机制子目录的 F / I / H / R、文化视角、生产状态和 golden case 规则复制到根 notes。
+
+### 想象瞬间 / Edge of Sight
+
+静态生图不在本仓库执行，走 Notion 生图运行协议 v4.0。本仓库只在产物页明确要求代码视频版时接手，按代码视频路由执行；不保存生图机制正文。
+
+## 生产 manifest
+
+每个新的 `productions/<YYYY-MM-DD-slug>/production.yaml` 至少包含：
+
+```yaml
+content_line: "有解｜关系与处世 | 世界机制 | 想象瞬间｜Edge of Sight"
+notion_output_url: "<产物页 URL>"
+```
+
+其余字段沿用 `world-mechanism/engine/production-orchestrator/template-production.yaml`，包括来源、Must Preserve、当前阶段、renderer、资产、原型、QA、阻塞和 `codex.next_actions`。仓库完成后，通过 Notion MCP 回填产物库的 `发布链接`（逻辑上的“链接”字段）和 `状态=待发布`；不填写猜测数据。
+
+## 技能与上游边界
+
+- `relationship-content` 是三条内容线之外的关系线总控入口，负责把 Notion 交接转成本地执行。
+- `yuguang-sticker-bridge` 只保存贴图桥接协议，不保存 Notion 视觉机制。
+- `yuguang-handoff` 接收一个产物页 URL，读取 `仓库交接`、关联选题和对应机制，执行本地生产并回填 `发布链接` / `状态`。
+- `jiejie-illustrations` 是项目派生技能；`ian-xiaohei-illustrations` 保留供追溯，不改安装工具管理的上游技能。
+- 四个 `wm-*` 技能的完整真源在 `world-mechanism/skills/`，顶层入口只负责发现和指向。
+
+## 验证
+
+改动相关时运行：
+
+- 世界机制：在 `world-mechanism/` 执行 `python -m pip install -r requirements-dev.txt pytest`，再运行 `.github/workflows/validate.yml` 中的 6 个校验脚本；
+- video-kit：在 `engine/video-kit/` 执行 `sh run.sh`，检查 4.000 s、响度 `−14 ±1 LUFS`、真峰 `≤ −1 dBTP`；
+- 路径：运行仓库路径检查脚本，确认所有项目自有 `SKILL.md`、`AGENTS.md` 和交接文档引用的本地路径存在；
+- Notion：所有当前入口 URL 和实际数据库 URL 通过 Notion MCP 重新读取后，才报告可读。
+
+Git commit message 使用简洁英文。只在用户明确要求时 push；部署走项目自己的命令，不用 push 代替部署。

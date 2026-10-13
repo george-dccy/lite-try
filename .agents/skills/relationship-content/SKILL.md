@@ -1,21 +1,21 @@
 ---
 name: relationship-content
-description: 在 lite_try 项目中把关系与处世创意编排为公众号文章、文字配图卡片、Huashu 视频、图片故事或双格观察卡。贴图/图片消息/小绿书/双格卡请求优先路由到 yuguang-sticker-bridge，通过 Notion MCP 实时读取“余光所及”机制；其他形式先形成候选卡，选题确认后生产指定形式。
+description: 在 lite_try 项目中把 Notion 已确认的关系与处世产物交接为公众号文章、文字配图卡片、代码视频、图片故事或双格观察卡。贴图/图片消息/小绿书/双格卡请求优先路由到 yuguang-sticker-bridge，通过 Notion MCP 实时读取“余光所及”机制。
 ---
 
 # 关系与处世内容总控
 
-在项目根目录执行。先读 notes/BRAND_POSITIONING.md、notes/TOPIC_SELECTION_SYSTEM.md 和 notes/MULTIFORMAT_CONTENT_SYSTEM.md。当前品牌主要面向成人，IP 代表 Devin，妻子贡献经验与判断但不冒称已参与审阅。
+在项目根目录执行。先读 `notes/BRAND_POSITIONING.md`、`notes/NOTION_HANDOFF.md` 和对应 Notion 产物页。当前品牌主要面向成人，IP 代表 Devin，妻子贡献经验与判断但不冒称已参与审阅。
 
 ## 入口
 
-宽泛请求研究后给三张候选卡。每卡说明具体读者、场景、一个困惑、单一交付、材料与可迁移样本机制。用户选择后再写长稿和生成媒体；明确“做这个”视为已选择。整套输出四种形式；单一形式请求只制作该形式。
+宽泛请求不在本地生成候选卡：通过 Notion 工作台 S1–S3 收念头、挖深并生成选题库条目，等待 `KEEP / HOLD / REJECT`。明确“做这个”时读取对应选题和产物页，从 S4 的 `仓库交接` 开始；仓库只执行用户已确认的形式。
 
 ### 双格观察卡 Fast Lane
 
 如果用户明确要求“贴图”“公众号图片消息”“小绿书”“双格卡”“双格观察卡”“生活/关系轻图文”“用余光所及做这个题”或用轻图文做冷启动/选题验证，**不要先走上述完整候选卡 → 母稿流程**。
 
-改为加载 `.agents/skills/yuguang-sticker-bridge/SKILL.md` 与 `notes/NOTION_YUGUANG_STICKER_BRIDGE.md`，通过 Notion MCP 实时读取专用 Notion Skill，再由它调用当前“余光所及”现行机制。仓库只提供生活/关系主题、表达目的与测试输入，不复制或缓存视觉机制和完整双格版式正文。
+改为加载 `.agents/skills/yuguang-sticker-bridge/SKILL.md` 与 `notes/NOTION_HANDOFF.md`，通过 Notion MCP 实时读取专用 Notion Skill，再由它调用当前“余光所及”现行机制。仓库只提供生活/关系主题、表达目的与测试输入，不复制或缓存视觉机制和完整双格版式正文。
 
 默认产物不是一条必须连续阅读的 3–6 图剧情，而是 **3–6 张可独立传播的上下双格观察卡 / 双格洞察卡**。同一主题下，每张卡可以表达一种常见情况、一个轻判断、一句更舒服的说法或一个值得停一下想想的观察；每格允许风格化大字和极短补充。具体版式方法已经写入 Notion Skill，运行时直接读取它，**不再额外访问 `yang0/handraw-style` 或其他外部模板仓库。**
 
@@ -23,22 +23,22 @@ description: 在 lite_try 项目中把关系与处世创意编排为公众号文
 
 ## 执行
 
-1. 保存内容简报，区分真实材料、个人观点和演绎场景。平台研究走 Agent Reach 当前路由，样本拆解按 Creator Buddy 接入文档。
-2. Gemini 直接生成初稿；主 Agent 核对材料，按需收集妻子的具体判断，再执行 deai-promax。吸引力看场景、冲突和推进，不用检测分数替代审稿。
-3. 为每种目标形式独立改编，沿用同一核心判断。按 MULTIFORMAT_CONTENT_SYSTEM.md 的路由读取被选子技能及所需 references；不默认加载全部技能。
-4. 视频以 huashu-art-motion 为主，先镜头表和检查，再 Visual Master Sheet 与单镜头包，按声音实际时长对齐。语音读取当前 Huashu narrator 绑定，不写死旧 ID。H3 使用真实动态片段。
-5. 各形式按上游检查及实际目检验收，产物保存至 episodes/、build/，通过后导出 outputs/ 的新版本。
+1. 先读取 Notion 产物页，区分真实材料、个人观点和演绎场景；研究和样本路由见 `notes/REPOSITORY_EXECUTION.md`。
+2. 需要起草时可以调用本机 Gemini CLI；最终文字、方法、口吻和质检仍以 Notion 写作机制为准，并写回产物页。
+3. 只执行产物页指定的形式，不在本地重新编排选题或改写机制；每个形式按对应上游技能和本仓库验证规则验收。
+4. 视频读取 Notion 创意视频机制，简单片用 `engine/video-kit`，复杂风格用 `world-mechanism/renderers/art-motion`；Huashu 只负责当前绑定的配音配置或明确指定的参考能力。
+5. 新产物保存至 `productions/<YYYY-MM-DD-slug>/`，历史 `episodes/` 只读保留；通过验收后导出 `outputs/` 并回填 Notion 产物页。
 
 上述常规执行步骤不适用于已经命中“双格观察卡 Fast Lane”的请求；此类任务按 `yuguang-sticker-bridge` 的执行与交付规则完成。
 
 ## 路由要点
 
-文章写作与配文用已安装 Creator Buddy 子技能；公众号排版用 gzh-design；公众号封面与文字卡片用 guizang-social-card-skill；正文插画默认用项目派生 jiejie-illustrations，再交内置生图工具。hand-drawn 仅用于明确指定的其他画风。解解保留年轻化漫画比例，去掉发夹，不做成人化；识别符号按 BRAND_POSITIONING.md 的确认状态执行。cy-carousel 只在适合其 AI 科技笔记体裁时使用。微信图文变现技能仅在明确提出商业化任务时调用。
+写作和配文的正文方法以 Notion 写作机制为准；Creator Buddy 只作获授权的起草、样本研究和平台适配辅助。公众号排版用 gzh-design；公众号封面与文字卡片用 guizang-social-card-skill；正文插画默认用项目派生 jiejie-illustrations，再交内置生图工具。hand-drawn 仅用于明确指定的其他画风。解解保留年轻化漫画比例，去掉发夹，不做成人化；识别符号按 BRAND_POSITIONING.md 的确认状态执行。cy-carousel 只在适合其 AI 科技笔记体裁时使用。微信图文变现技能仅在明确提出商业化任务时调用。
 
 公众号贴图、图片消息、小绿书式关系轻图文与双格观察卡不默认使用上述文字卡片/插画路由；命中 Fast Lane 时，由 Notion 中当前“余光所及”机制决定人物、场景、摄影、Prompt、双格版式和成图质量门。
 
 用户已要求自动化，常规尺寸、主题推荐和目录选择自行处理；创意拍板保留。上游固定科技配色、强制模板页数和与项目冲突的工作区路径不覆盖品牌及用户意图。
 
-关系图文读取 notes/BRACKET_NARRATIVE_FORMAT.md。把归藏 Editorial 当作布局参考，内容采用原话、可能的理解、回应与关系变化的原创叙事语法；不复制快乐的小小我上下双格模板或他人固定角色。对标账号分别核实常态互动、内容结构、商业入口和成交证据；单篇高赞与商品露出不等于稳定变现。
+关系图文按 Notion 写作机制 §5.1 执行；`notes/BRACKET_NARRATIVE_FORMAT.md` 只作为历史指针。把归藏 Editorial 当作布局参考，内容采用原话、可能的理解、回应与关系变化的原创叙事语法；不复制他人固定角色。对标账号分别核实常态互动、内容结构、商业入口和成交证据；单篇高赞与商品露出不等于稳定变现。
 
 交付可审阅文件与简短状态。不得凭 Skill 安装宣称成片生产已经跑通；不自动公开发布，不替用户妻子编造资历或审稿结果。

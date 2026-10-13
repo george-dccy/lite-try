@@ -5,7 +5,7 @@ description: 为 lite-try 的关系与处世内容生成公众号贴图、图片
 
 # 余光所及双格观察卡桥接器
 
-先读 `notes/BRAND_POSITIONING.md` 与 `notes/NOTION_YUGUANG_STICKER_BRIDGE.md`。
+先读 `notes/BRAND_POSITIONING.md` 与 `notes/NOTION_HANDOFF.md`。
 
 ## 何时使用
 
@@ -32,10 +32,11 @@ description: 为 lite-try 的关系与处世内容生成公众号贴图、图片
 
 1. 通过已连接的 Notion MCP fetch：
    `https://app.notion.com/p/3f627110f8d581918bf3de93e837a339`
-2. 把本轮的目标人群、生活/关系主题、想表达的观察或困惑、可选上下格语义关系、测试假设和用户指定的平台/数量作为输入交给该 Notion Skill。
-3. 完全按 Skill 页面执行。该页会继续要求实时读取当前“余光所及”Agent 运行协议及现行权威页面。
-4. 双格版式方法已经内置在 Notion Skill 中；**不得为了版式再访问 `yang0/handraw-style`、外部网页或其他模板仓库。**
-5. 所有 `app.notion.com` 内容只通过 Notion MCP 访问。
+2. 先按真实 schema 在工作台产物库创建一条产物记录；逻辑上的“链接”字段按真实字段名 `发布链接` 处理，未生成前不填完成链接。
+3. 把本轮的输入交给该 Notion Skill。输入只能来自以下四类之一：明确主题/困惑/一句话；lite-try 已验证题；今日探索的选题库候选；或工作台选题库的一条正式选题。保留正式选题的 `认知转折`、`读者带走` 和 `测试假设`。
+4. 完全按 Skill 页面执行。该页会继续要求实时读取当前“余光所及”Agent 运行协议及现行权威页面。
+5. 双格版式方法已经内置在 Notion Skill 中；**不得为了版式再访问 `yang0/handraw-style`、外部网页或其他模板仓库。**
+6. 所有 `app.notion.com` 内容只通过 Notion MCP 访问。
 
 如果 Notion MCP 不可用、页面读取失败或上游协议阻断，立即返回 `blocked` 并说明具体缺口。**不得**使用仓库缓存、旧 Prompt、历史成图或模型记忆模拟“余光所及”机制。
 
@@ -57,7 +58,7 @@ description: 为 lite-try 的关系与处世内容生成公众号贴图、图片
 
 ## 输出
 
-优先接收 Notion Skill 返回的 `sticker_manifest`。若当前环境具备生图能力，保存最终双格卡成图；若只有 Prompt，则明确标记 `prompt_ready`，不冒充成图完成。
+优先接收 Notion Skill 返回的 `sticker_manifest`。若当前环境具备生图能力，保存最终双格卡成图；若只有 Prompt，则明确标记 `prompt_ready`，不冒充成图完成。manifest 必须带 `notion_output_url`；仓库完成后由 handoff 流程回填产物库的 `发布链接` 与 `状态=待发布`。
 
 推荐目录：
 

@@ -9,7 +9,7 @@ description: 为余光所及有解的关系文章生成解解IP正文插画或�
 
 ## 先读
 
-在 lite_try 根目录读取 notes/BRAND_POSITIONING.md、notes/WECHAT_VISUAL_STYLE_SYSTEM.md 和本次确定的正文。原参考图为 research/visual-ip/explainer-boy-v1.png；生成前实际看图。若品牌文件登记了新的已确认参考，改用它，不能按文件时间猜哪个已获批准。
+在 lite_try 根目录读取 `notes/BRAND_POSITIONING.md`、`notes/REPOSITORY_EXECUTION.md`、本次 Notion 产物页和确定的正文。现行写作与配图判断以 Notion 写作机制为准；本技能只负责关系线正文图的本地调用和资产装配。原参考图为 `research/visual-ip/explainer-boy-v1.png`；生成前实际看图。若品牌文件登记了新的已确认参考，改用它，不能按文件时间猜哪个已获批准。
 
 ## 角色与画风
 
