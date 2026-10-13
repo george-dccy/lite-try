@@ -1,3 +1,8 @@
+[submodule ".agents/skills/creator-buddy"]
+	path = .agents/skills/creator-buddy
+	url = https://github.com/SpaceZephyr/creator-buddy.git
+	branch = main
+
 [submodule "world-mechanism/third_party/huashu-art-motion"]
 	path = world-mechanism/third_party/huashu-art-motion
 	url = https://github.com/alchaincyf/huashu-art-motion.git
