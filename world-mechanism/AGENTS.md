@@ -1,3 +1,5 @@
+# 上层约束见根目录 AGENTS.md 和 Notion 现行机制。
+
 # AGENTS.md — World Mechanism Story Engine
 
 This repository is designed to be produced primarily by **Codex / coding agents**.
