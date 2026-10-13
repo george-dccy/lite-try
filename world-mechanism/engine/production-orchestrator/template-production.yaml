@@ -2,6 +2,8 @@ id: "<production-id>"
 version: "0.1"
 status: production_initialized
 medium: video
+content_line: ""
+notion_output_url: ""
 
 sources:
   creative_candidate: ""
