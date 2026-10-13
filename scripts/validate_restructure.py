@@ -49,6 +49,8 @@ REQUIRED_PATHS = [
     "world-mechanism/engine/production-orchestrator/template-production.yaml",
 ]
 
+AGENT_FILES = ["AGENTS.md", "world-mechanism/AGENTS.md"]
+
 NOTION_URL_RE = re.compile(
     r"(?:https://app\.notion\.com/(?:p|[a-z-]+)/(?:[A-Za-z0-9_-]+)|collection://[A-Za-z0-9-]+)"
 )
@@ -85,6 +87,53 @@ def current_files() -> list[Path]:
     return [path for path in files if path.exists()]
 
 
+def instruction_files() -> list[Path]:
+    paths = [ROOT / rel for rel in AGENT_FILES]
+    paths.extend(ROOT / rel for rel in OWNED_SKILLS)
+    return [path for path in paths if path.exists()]
+
+
+def referenced_local_paths(path: Path) -> set[Path]:
+    """Return concrete backtick paths from an instruction file.
+
+    Dynamic examples such as productions/<date-slug> are intentionally skipped;
+    concrete paths are checked so a renamed local dependency fails early.
+    """
+
+    candidates: set[Path] = set()
+    text = read_text(path)
+    for token in re.findall(r"`([^`]+)`", text):
+        token = token.strip().rstrip(".,;:)")
+        if (
+            not token
+            or token.startswith(("http://", "https://"))
+            or "<" in token
+            or " " in token
+            or "|" in token
+            or "→" in token
+            or "..." in token
+            or token.startswith(("python ", "node ", "sh "))
+        ):
+            continue
+        if not token.startswith((
+            ".agents/",
+            "engine/",
+            "episodes/",
+            "notes/",
+            "outputs/",
+            "productions/",
+            "research/",
+            "scripts/",
+            "world-mechanism/",
+            "AGENTS.md",
+            "skills-lock.json",
+        )):
+            continue
+        normalized = token.replace("\\", "/").rstrip("/")
+        candidates.add(ROOT / normalized)
+    return candidates
+
+
 def notion_urls() -> set[str]:
     urls: set[str] = set()
     for path in current_files():
@@ -111,6 +160,14 @@ def main() -> int:
         text = read_text(path)
         if path.name == "SKILL.md" and not text.startswith("---\n"):
             failures.append(f"skill missing front matter: {path.relative_to(ROOT)}")
+
+    for instruction in instruction_files():
+        for referenced in referenced_local_paths(instruction):
+            if not referenced.exists():
+                failures.append(
+                    f"missing referenced local path: {referenced.relative_to(ROOT)} "
+                    f"(from {instruction.relative_to(ROOT)})"
+                )
 
     expected_urls = (notion_urls() | REQUIRED_NOTION_URLS) - IGNORED_NOTION_URLS
     verified_urls = set(args.notion_ok_url)
