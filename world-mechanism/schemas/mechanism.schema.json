@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mechanism Map",
+  "type": "object",
+  "required": ["question", "one_sentence_model", "evidence_status"],
+  "properties": {
+    "question": {"type": "string", "minLength": 1},
+    "one_sentence_model": {"type": "string", "minLength": 1},
+    "actors": {"type": "array", "items": {"type": "object"}},
+    "forces": {"type": "array", "items": {"type": "string"}},
+    "flows": {"type": "array", "items": {"type": "string"}},
+    "feedback_loops": {"type": "array", "items": {"type": "string"}},
+    "thresholds": {"type": "array", "items": {"type": "string"}},
+    "time_scales": {"type": "array", "items": {"type": "string"}},
+    "evidence_status": {
+      "type": "object",
+      "required": ["facts", "interpretations", "hypotheses"],
+      "properties": {
+        "facts": {"type": "array", "items": {"type": "string"}},
+        "interpretations": {"type": "array", "items": {"type": "string"}},
+        "hypotheses": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "creator_surprise": {"type": "string"}
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Director Proposal",
+  "type": "object",
+  "required": ["id", "version", "status", "source_video_concept", "production_thesis", "protagonist_strategy", "sequences", "locked"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "version": {"type": "string"},
+    "status": {"enum": ["draft", "review", "approved", "retired"]},
+    "source_video_concept": {"type": "string"},
+    "production_thesis": {"type": "string"},
+    "protagonist_strategy": {"type": "object"},
+    "ordinary_anchors": {"type": "array", "items": {"type": "object"}},
+    "visual_grammar": {"type": "object"},
+    "sound_grammar": {"type": "object"},
+    "sequences": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "cognitive_job", "visible_action", "shot_strategy", "audio_strategy", "end_state"],
+        "properties": {
+          "id": {"type": "string"},
+          "duration_sec": {"type": "number", "minimum": 0},
+          "cognitive_job": {"type": "string"},
+          "visible_action": {"type": "string"},
+          "shot_strategy": {"type": "string"},
+          "audio_strategy": {"type": "string"},
+          "end_state": {"type": "string"},
+          "transition": {"type": "string"}
+        }
+      }
+    },
+    "asset_strategy": {"type": "object"},
+    "production_risks": {"type": "array", "items": {"type": "string"}},
+    "locked": {"type": "array", "items": {"type": "string"}},
+    "flexible": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,169 @@
+id: S01-pass-b
+mode: pass-b
+checked_at: "2026-10-01"
+scope:
+  domain: "large-scale digital content discovery and recommender systems"
+  examples:
+    - "YouTube"
+    - "Netflix"
+    - "Google Drive research"
+  note: "世界平台证据用于机制校准，不代表中国平台采用完全相同机制。"
+status: evidence-sufficient-with-caveats
+
+claims:
+  - claim_id: S01-F01
+    claim: "YouTube首页主要是个性化界面，会利用观看历史等信号进行推荐。"
+    label: F
+    confidence: high
+    source_ids: [S1, S2]
+    allowed_wording: "YouTube官方目前将Home描述为主要个性化的内容发现界面，并利用观看历史等信号进行推荐。"
+    do_not_strengthen_to: "YouTube首页只由一个目标或一种算法决定。"
+
+  - claim_id: S01-F02
+    claim: "YouTube订阅页会展示用户已订阅频道的视频，并主要按较新的内容排列。"
+    label: F
+    confidence: high
+    source_ids: [S3]
+    allowed_wording: "YouTube官方说明，Subscriptions页展示已订阅频道的视频，并按较新的内容为主排列。"
+    do_not_strengthen_to: "订阅页完全不存在任何其他排序或界面规则。"
+
+  - claim_id: S01-F03
+    claim: "YouTube搜索并不是简单按发布时间或播放量排序，而会考虑相关性、互动和质量等因素。"
+    label: F
+    confidence: high
+    source_ids: [S4]
+    allowed_wording: "YouTube Search当前会考虑相关性、互动和质量等因素。"
+    do_not_strengthen_to: "所有搜索平台都使用同样权重和指标。"
+
+  - claim_id: S01-F04
+    claim: "现代推荐系统可被视为用户、内容提供者、广告商等多参与者相互作用的生态。"
+    label: F
+    confidence: high
+    source_ids: [S5]
+    allowed_wording: "Google Research提出，现代推荐系统处在用户、内容提供者、广告商等参与者相互耦合的生态中。"
+    do_not_strengthen_to: "任何平台的推荐系统都已实际优化了所有参与者的长期利益。"
+
+  - claim_id: S01-F05
+    claim: "推荐系统可以降低特定任务中的寻找成本；Google Drive Quick Access研究中，用户寻找文件所用时间约减半。"
+    label: F
+    confidence: high
+    source_ids: [S6]
+    allowed_wording: "在Google Drive Quick Access这一具体场景中，推荐功能使用户寻找文件的时间约减半。"
+    do_not_strengthen_to: "个性化推荐通常都能把所有平台的搜索成本降低一半。"
+
+  - claim_id: S01-F06
+    claim: "推荐系统研究会同时研究准确度、多样性、新颖性和偶遇性等目标。"
+    label: F
+    confidence: high
+    source_ids: [S7]
+    allowed_wording: "推荐研究并不只讨论准确率，也会研究多样性、新颖性和偶遇性等维度。"
+    do_not_strengthen_to: "所有商业平台都把这些目标放在同等优先级。"
+
+  - claim_id: S01-F07
+    claim: "Netflix将推荐与搜索视为帮助成员导航大规模内容库的核心能力，并以减少浏览和搜索时间、提升体验为目标。"
+    label: F
+    confidence: high
+    source_ids: [S8]
+    allowed_wording: "Netflix Research目前把Personalization、Recommendations和Search描述为其内容发现的重要能力。"
+    do_not_strengthen_to: "Netflix的推荐目标只有减少搜索时间。"
+
+  - claim_id: S01-I01
+    claim: "取消个性化推荐不会创造一个没有中介的首页，只会让其他排序和发现机制承担更多第一次筛选。"
+    label: I
+    confidence: high
+    source_ids: [S1, S3, S4, S5]
+    allowed_wording: "现实产品同时存在多种发现机制，因此拿走个性化首页推荐并不等于拿走排序与筛选本身。"
+    do_not_strengthen_to: "关闭个性化推荐后一定会由某一种特定机制接管。"
+
+  - claim_id: S01-H01
+    claim: "如果取消个性化首页排序，创作者会调整发布时间、标题或外部导流策略。"
+    label: H
+    confidence: low
+    source_ids: []
+    allowed_wording: "一种可能的适应，是创作者把更多注意力放到发布时间、订阅关系、搜索和外部导流上。"
+    do_not_strengthen_to: "关闭推荐后的第几天创作者一定会出现某种行为。"
+
+sources:
+  - source_id: S1
+    title: "YouTube 推荐内容的运作方式"
+    publisher: "YouTube Help"
+    url: "https://support.google.com/youtube/answer/16089387?hl=zh-Hans"
+    publication_date: null
+    source_tier: 1
+    primary: true
+    notes: "Checked 2026-10-01. Home primarily personalized; recommendation signals."
+
+  - source_id: S2
+    title: "YouTube's Recommendation System"
+    publisher: "YouTube Help"
+    url: "https://support.google.com/youtube/answer/16533387?hl=en"
+    publication_date: null
+    source_tier: 1
+    primary: true
+    notes: "Current goal description: relevance and long-term viewer satisfaction."
+
+  - source_id: S3
+    title: "Good to know about recommendations for YouTube's recommendation system"
+    publisher: "YouTube Help"
+    url: "https://support.google.com/youtube/answer/16559651?hl=en"
+    publication_date: null
+    source_tier: 1
+    primary: true
+    notes: "Subscriptions tab lists subscribed-channel videos by most recent."
+
+  - source_id: S4
+    title: "How YouTube search works"
+    publisher: "YouTube Help"
+    url: "https://support.google.com/youtube/answer/16090438?hl=en"
+    publication_date: null
+    source_tier: 1
+    primary: true
+    notes: "Search ranking: relevance, engagement, quality."
+
+  - source_id: S5
+    title: "Modeling Recommender Ecosystems"
+    publisher: "Google Research"
+    url: "https://research.google/pubs/modeling-recommender-ecosystems-research-challenges-at-the-intersection-of-mechanism-design-reinforcement-learning-and-generative-models/"
+    publication_date: "2024"
+    source_tier: 1
+    primary: true
+    notes: "Multi-actor ecosystem and long-term utility research framing."
+
+  - source_id: S6
+    title: "Improving Recommendation Quality at Google Drive"
+    publisher: "Google Research"
+    url: "https://research.google/pubs/improving-recommendation-quality-at-google-drive/"
+    publication_date: "2020"
+    source_tier: 1
+    primary: true
+    notes: "Specific Quick Access result; do not generalize numeric effect."
+
+  - source_id: S7
+    title: "Values of Exploration in Recommender Systems"
+    publisher: "Google Research"
+    url: "https://research.google/pubs/values-of-exploration-in-recommender-systems/"
+    publication_date: "2021"
+    source_tier: 1
+    primary: true
+    notes: "Accuracy, diversity, novelty, serendipity."
+
+  - source_id: S8
+    title: "Recommendations"
+    publisher: "Netflix Research"
+    url: "https://research.netflix.com/research-area/recommendations"
+    publication_date: null
+    source_tier: 1
+    primary: true
+    notes: "Checked 2026-10-01. Current research area and discovery goals."
+
+evidence_gaps:
+  - "缺少公开、可直接外推到中国主流内容平台的同等透明排序机制资料。"
+  - "‘关闭个性化推荐后的行为变化’仍属于思想实验，文章不得写成已证实结果。"
+  - "如正式发布并点名具体中国平台，需要单独做平台级Pass B。"
+
+mechanism_correction: "证据支持‘多种发现机制并存、推荐能降低部分寻找成本、生态含多参与者’；但不支持对关闭个性化推荐后的现实行为作确定预测，因此文章继续采用逐规则思想实验而不是经验性结论。"
+do_not_strengthen:
+  - "不要把YouTube机制当成所有平台通用实现。"
+  - "不要把推荐系统目标简化为只追求观看时长。"
+  - "不要把人工编辑、时间顺序或搜索写成无中介状态。"
+  - "不要把思想实验分支写成实证结果。"

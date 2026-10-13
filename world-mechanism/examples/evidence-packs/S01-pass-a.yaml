@@ -1,0 +1,78 @@
+id: S01-pass-a
+mode: pass-a
+checked_at: "2026-10-01"
+scope:
+  domain: "large-scale digital recommendation systems"
+  focus: "personalized predictive ranking, search cost, multi-actor ecosystem"
+status: ambiguous
+premise: "如果推荐算法取消七天，用户会回到真实的自主选择。"
+
+claims:
+  - claim_id: S01-F01
+    claim: "Netflix将推荐与搜索作为帮助用户导航内容库的核心能力。"
+    label: F
+    confidence: high
+    source_ids: [S1]
+    allowed_wording: "Netflix Research把Recommendations和Search描述为其内容发现与个性化体验的核心能力。"
+    do_not_strengthen_to: "所有推荐平台都以相同方式工作。"
+
+  - claim_id: S01-F02
+    claim: "Google Drive Quick Access在该产品场景中把用户定位文件的时间约减半。"
+    label: F
+    confidence: high
+    source_ids: [S2]
+    allowed_wording: "在Google Drive Quick Access这一具体场景中，加入推荐使用户寻找文件的时间约减半。"
+    do_not_strengthen_to: "推荐算法通常都能把用户搜索成本降低一半。"
+
+  - claim_id: S01-I01
+    claim: "无个性化推荐不等于无注意力分配规则。"
+    label: I
+    confidence: high
+    source_ids: [S1, S3]
+    allowed_wording: "取消个性化预测排序后，界面仍需要通过订阅、搜索、时间顺序、编辑或其他规则组织可见内容。"
+    do_not_strengthen_to: "任何取消推荐的产品最终都会恢复同样的算法。"
+
+  - claim_id: S01-H01
+    claim: "七天内创作者会系统性改变发布时间和外部导流策略。"
+    label: H
+    confidence: low
+    source_ids: []
+    allowed_wording: "一种可能的适应是创作者更重视发布时间或外部导流。"
+    do_not_strengthen_to: "创作者在第三天一定会改变发布时间策略。"
+
+sources:
+  - source_id: S1
+    title: "Recommendations"
+    publisher: "Netflix Research"
+    url: "https://research.netflix.com/research-area/recommendations"
+    publication_date: null
+    source_tier: 1
+    primary: true
+    notes: "Current first-party research area page, checked 2026-10-01."
+
+  - source_id: S2
+    title: "Improving Recommendation Quality at Google Drive"
+    publisher: "Google Research"
+    url: "https://research.google/pubs/improving-recommendation-quality-at-google-drive/"
+    publication_date: "2020"
+    source_tier: 1
+    primary: true
+    notes: "Specific Google Drive product study; do not generalize the metric."
+
+  - source_id: S3
+    title: "Modeling Recommender Ecosystems"
+    publisher: "Google Research"
+    url: "https://research.google/pubs/modeling-recommender-ecosystems-research-challenges-at-the-intersection-of-mechanism-design-reinforcement-learning-and-generative-models/"
+    publication_date: "2024"
+    source_tier: 1
+    primary: true
+    notes: "Conceptual research on multi-actor recommender ecosystems."
+
+evidence_gaps:
+  - "真实平台关闭个性化推荐后的因果行为证据不足。"
+  - "不同替代排序机制对新创作者发现的影响需要分平台研究。"
+
+mechanism_correction: "先把‘算法取消’ operationalize 为‘禁止基于个人历史的首页预测排序’，再对替代机制做分支推演。"
+do_not_strengthen:
+  - "不要把反事实行为写成现实事实。"
+  - "不要把某个平台研究外推成所有平台规律。"

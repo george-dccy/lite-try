@@ -1,0 +1,169 @@
+id: F01-world-second
+version: "0.2"
+status: motion_plan_ready
+medium: video
+
+sources:
+  creative_candidate: "F01 Golden Candidate v0.4"
+  blueprint: "examples/blueprints/F01-world-second.yaml"
+  evidence_pack: ""
+  content_master: "content-masters/F01-you-cant-live-a-second.md"
+  video_concept: "examples/video-concepts/F01-one-second-world.yaml"
+  director_proposal: "examples/director-proposals/F01-one-second-world.yaml"
+  motion_plan: "productions/F01-world-second/01-motion-plan.yaml"
+  pilot_lock: "productions/F01-world-second/00-pilot-lock.md"
+  production_design: "renderers/art-motion/F01-production-design.md"
+
+locks:
+  must_preserve:
+    - "世界并行，人生串行。"
+    - "全部同时体验→逐个进入上下文→AI总结→只选精彩四种方案依次被真诚满足。"
+    - "第一人称形式只改变体验方式，不降低原Content Master的思想密度。"
+    - "08:00:00先在正常世界中出现，然后异常冻结；最终自然进入08:00:01。"
+    - "别人的一秒必须被表现为他们自身连续时间中的一段，而非孤立素材。"
+    - "知道、观看、筛选、短暂进入都不等于把别人的人生接到我的时间线上。"
+    - "别处完整不构成此处残缺。"
+    - "不落到遗憾、缺失、宿命、平凡最珍贵、别羡慕别人或珍惜当下。"
+    - "不重新引入杯子左手边 / 酒店摸空 / 重复赋义支线。"
+  factual_constraints: []
+  creator_decisions:
+    - "F01从本轮起是90–110秒MVP Pilot，不再作为终极代表作无限雕琢。"
+    - "Content Master与核心认知链锁到first rough cut。"
+    - "first rough cut前最多允许一次由prototype失败触发并记录原因的结构修改。"
+    - "首轮采用统一当代插画宇宙，不以多画风为卖点。"
+    - "Codex/art-motion为主生产系统。"
+    - "本地MiniMax H3 Lite可作为受控动态素材后端，不掌管整片结构。"
+    - "F01完成first rough cut后应尽快进入S01和A08，验证项目可重复生产能力。"
+
+renderer:
+  primary: "renderers/art-motion"
+  upstream: "third_party/huashu-art-motion"
+  production_mode: codex_first
+  style_count_strategy: single_style
+  selected_styles:
+    - id: "16_2026-derived"
+      job: "作为统一当代插画Style Bible的起点；允许为F01重新设计，而不是机械复刻上游示例。"
+  selected_grammars:
+    - "embodied_first_person_continuous_scene"
+    - "time_freeze_anomaly_reveal"
+    - "window_multiplication_sound_overload"
+    - "context_dive_plus_long_scroll"
+    - "t2_keynote_ui"
+    - "curated_highlight_montage"
+    - "single_world_embodied_return"
+    - "single_world_next_second_coda"
+  selection_rationale:
+    - "本片要验证世界数量与体验方式变化，不需要靠画风变化承担论证。"
+    - "统一插画风更适合本地H3 Lite稳定、低成本地产生若干自然运动片段。"
+    - "art-motion的核心价值继续体现在可编程动画语法、世界画布、时间线、转场和QA，而非必须使用多种风格。"
+    - "越接近结论，视觉系统越少，最终只剩第一人称真实空间和下一秒。"
+
+asset_policy:
+  generated_images:
+    allowed: true
+    uses:
+      - "Style Bible人物/手部/反射参考"
+      - "复杂场景plate和一致性关键帧"
+  generated_video:
+    default: false
+    controlled_backend: "local MiniMax H3 Lite"
+    allowed_when:
+      - "窗口内部需要自然人物/环境运动，纯代码成本明显更高"
+      - "已经有锁定Style Bible、明确时长、构图、动作、入点和出点"
+    prohibited_ownership:
+      - "整片时间线"
+      - "核心分屏结构"
+      - "长卷逻辑"
+      - "08:00:00→08:00:01最终Visual Proof"
+    clips: []
+
+stages:
+  creative_gate:
+    state: passed
+    evidence: "KEEP / Golden Candidate v0.4"
+  blueprint:
+    state: passed
+  research_pass_b:
+    state: skipped
+    reason: "核心为哲学/体验结构；若后续增加事实数字再补。"
+  content_master:
+    state: passed
+  video_concept:
+    state: passed
+    version: "0.3 first-person pilot"
+  director_proposal:
+    state: passed
+    version: "0.3 first-person pilot"
+  style_routing:
+    state: passed
+    selected: "unified contemporary illustration"
+  keyframe_gate:
+    state: pending
+    candidates:
+      - "Style Bible protagonist/body cues"
+      - "normal morning + freeze"
+      - "parallel-world window example"
+      - "context-dive bicycle example"
+    selected: ""
+  prototype_gate:
+    state: pending
+    prototypes:
+      - "S1-S2_first_person_normal_to_freeze"
+      - "S3_world_open_to_overload"
+      - "S4_context_dive_long_scroll"
+      - "S7-S8_return_next_second"
+  first_person_timing:
+    state: pending
+    rule: "sparse internal/self expression only; no full explanatory voice-over"
+  rough_cut:
+    state: pending
+    latest: ""
+  qa_review:
+    state: pending
+    latest_log: ""
+  release_gate:
+    state: pending
+    candidate: ""
+  retrospective:
+    state: pending
+
+codex:
+  current_goal: "以最短路径做出F01 90–110秒first rough cut，验证Creative→Production整链路，不继续重写主题。"
+  completed_tasks:
+    - "F01 v0.4 Content Master思想层锁定"
+    - "Video Concept升级为v0.3第一人称Pilot"
+    - "Director Proposal升级为v0.3第一人称Pilot"
+    - "Motion Plan压缩为108秒"
+    - "art-motion renderer integrated and upstream pinned"
+    - "首轮视觉路线收束为统一当代插画"
+  next_actions:
+    - "读取AGENTS.md、本manifest、00-pilot-lock.md、v0.3 Video Concept / Director Proposal、01-motion-plan.yaml。"
+    - "先制作02-style-bible.md与少量首帧，锁人物身体线索、线条、色彩、光线、场景和H3 Lite素材规范。"
+    - "实现S1-S2正常早晨→08:00:00冻结原型，先验证第一人称不是游戏感。"
+    - "实现S3 1→2→4→8→16→64多世界原型；必要时用H3 Lite生成4–8秒窗口内部运动。"
+    - "实现S4上下文进入+long-scroll原型，确保‘这一秒拖着前后时间’能被看懂。"
+    - "实现S7-S8回归与08:00:00→08:00:01原型。"
+    - "四个原型通过后直接绑定极少量第一人称句子并拼first rough cut；不要先追加新哲学解释。"
+    - "把代码路径、H3 Lite资产来源、render输出与QA结果回写本manifest。"
+  blockers: []
+  reusable_engine_changes:
+    - "把统一Style Bible接口、H3 Lite bounded-clip接口、first-person freeze grammar做成可复用能力，不写死F01。"
+    - "context-dive + long-scroll若形成通用能力，扩展art-motion适配层。"
+
+renders:
+  stills: []
+  prototypes: []
+  rough_cuts: []
+  release_candidates: []
+
+qa:
+  upstream_qa_run: false
+  subtitle_zone_checked: false
+  independent_review_complete: false
+  open_findings: []
+  resolved_findings: []
+
+resume_instruction: >-
+  Read AGENTS.md and this manifest first. F01 is production-locked as a 90–110 second first-person pilot.
+  Do not restart mechanism/creative exploration, do not replace the four-step cognitive chain, and do not polish the thesis before first rough cut.
+  Continue from codex.next_actions. A structural revision is allowed at most once before first rough cut and only when a failed prototype is logged with evidence.

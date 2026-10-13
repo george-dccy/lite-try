@@ -1,0 +1,186 @@
+id: F01-world-second-motion
+version: "0.2"
+status: prototype-ready
+source_content_master: content-masters/F01-you-cant-live-a-second.md
+source_video_concept: examples/video-concepts/F01-one-second-world.yaml
+source_director_proposal: examples/director-proposals/F01-one-second-world.yaml
+renderer: renderers/art-motion
+upstream_engine: third_party/huashu-art-motion
+
+master:
+  duration_sec: 108
+  fps: 60
+  preferred_direction: "unified_contemporary_illustration"
+  perspective: "embodied_first_person"
+  primary_canvas: "1920x1080"
+  vertical_derivative: "1080x1920 after master picture lock"
+  deterministic_seed: 20261007
+
+production_policy:
+  - "F01 is a pilot, not a final masterpiece. First rough cut is the immediate objective."
+  - "Content Master and four-step cognitive chain are locked until first rough cut."
+  - "Between approved concept and first rough cut, at most one structural revision is allowed, and only after a logged prototype failure."
+  - "Use a unified contemporary illustration world unless a prototype proves this direction unworkable."
+  - "Codex/art-motion owns timeline, camera system, windows, transitions, typography, sound cues, composition and QA."
+  - "Local MiniMax H3 Lite may create bounded living-motion assets inside the locked visual bible; it does not own whole-film structure."
+  - "Visual Proof beats should contain little or no explanatory speech."
+
+sequences:
+  - id: S1
+    start_sec: 0
+    end_sec: 12
+    prototype_gate: true
+    prototype_range_sec: [0, 12]
+    cognitive_job: "establish one normal continuous life and the protagonist's real question"
+    grammar: "embodied_first_person_continuous_scene"
+    style: "unified contemporary illustration"
+    camera: "subjective or near-subjective; hands, footsteps, reflection, shadow and gaze shifts establish embodiment without turning into videogame POV"
+    action: "leave home area, pass breakfast activity, enter ordinary commuting flow"
+    first_person_line: "我一直有个很奇怪的念头。同一秒钟，世界其他地方的人正在经历什么？"
+    audio_cue: "one complete readable morning sound field"
+    transition: "gaze lands on 08:00:00"
+    subtitle_safe_zone: "bottom 18% reserved"
+
+  - id: S2
+    start_sec: 12
+    end_sec: 20
+    prototype_gate: true
+    prototype_range_sec: [12, 20]
+    cognitive_job: "turn the question into a testable anomaly"
+    grammar: "time_freeze_anomaly_reveal"
+    style: "same world as S1"
+    camera: "first-person head turn and hand/body movement while external motion is frozen"
+    action: "08:00:00 freezes pedestrians, vehicles and wind-driven details; protagonist remains mobile; first other-world sound leaks in"
+    text_cues:
+      - {at_sec: 12.8, text: "08:00:00"}
+    audio_cue: "city sound collapses to body-near sound, then an alien spatial ambience enters"
+    transition: "first other-world aperture/window opens"
+
+  - id: S3
+    start_sec: 20
+    end_sec: 35
+    prototype_gate: true
+    prototype_range_sec: [20, 28]
+    cognitive_job: "fully grant simultaneous access, then let experience collapse under its own success"
+    grammar: "window_multiplication_sound_overload"
+    style:
+      base: "unified contemporary illustration"
+      world_pool:
+        - {id: W01, motif: "after-work door push"}
+        - {id: W02, motif: "rain umbrella entering home"}
+        - {id: W03, motif: "seaside run"}
+        - {id: W04, motif: "bringing laundry in"}
+        - {id: W05, motif: "late small restaurant meal"}
+        - {id: W06, motif: "child learning bicycle"}
+        - {id: W07, motif: "late-night transit wait"}
+        - {id: W08, motif: "watering balcony plants at dusk"}
+    camera: "shared macro frame; windows multiply 1→2→4→8→16→64 while each clip continues moving"
+    action: "each world has one readable action before scale and sound destroy sustained attention"
+    asset_backend: "H3 Lite allowed for 4–8s living-motion loops after style-bible lock; code compositing remains authoritative"
+    audio_cue: "add one spatial sound field per world; legible through early stages, unreadable by overload"
+    speech_policy: "no explanatory line during the proof"
+    transition: "hard silence and collapse to one world"
+
+  - id: S4
+    start_sec: 35
+    end_sec: 52
+    prototype_gate: true
+    prototype_range_sec: [35, 44]
+    cognitive_job: "restore context by entering lives sequentially, then reveal that context itself expands time"
+    grammar: "context_dive_plus_long_scroll"
+    style: "same unified illustration language"
+    camera: "enter one person's local perspective/context, then pull back into a forward-only long-scroll queue"
+    action: "use a child-learning-bicycle moment: show the release of a supporting hand, a compressed glimpse of prior attempts, and the next second of riding onward; then reveal endless other lives queued behind"
+    first_person_line: "这一秒不是单独的一秒。"
+    audio_cue: "one concrete life regains full spatial sound; each next life has a new sound field"
+    transition: "long-scroll compresses into an information summary"
+    upstream_refs:
+      - "references/11-长卷穿越片.md"
+      - "scripts/engine/demos/long_scroll/"
+
+  - id: S5
+    start_sec: 52
+    end_sec: 66
+    prototype_gate: false
+    cognitive_job: "separate knowing from experiencing"
+    grammar: "t2_keynote_ui"
+    secondary_grammar: "restrained_y5_kinetic_type"
+    style: "same palette and shapes abstracted into clean information space"
+    camera: "one screen = one focal object"
+    action: "events become concise categories, representative images and short factual summaries"
+    first_person_line: "我知道了发生了什么。可我没有活过它。"
+    audio_cue: "centered, clean, almost no spatial ambience"
+    transition: "system proposes only the most worthwhile moments"
+
+  - id: S6
+    start_sec: 66
+    end_sec: 80
+    prototype_gate: false
+    cognitive_job: "fully satisfy curation, then reveal that excellence does not create continuity"
+    grammar: "curated_highlight_montage"
+    style: "unified contemporary illustration; no style-speedrun"
+    camera: "2–3s confident fragments with different framing/light/action but one coherent visual universe"
+    action: "proposal, championship win, sunset, reunion, first sight of sea; finally all become separate floating fragments"
+    audio_cue: "each highlight has its own short local sound; no shared bed that fakes one continuous life"
+    speech_policy: "no moral judgment; let fragmentation carry the idea"
+    transition: "fragments retreat and reveal frozen opening world"
+
+  - id: S7
+    start_sec: 80
+    end_sec: 100
+    prototype_gate: true
+    prototype_range_sec: [88, 100]
+    cognitive_job: "resolve missing-out without denying other lives"
+    grammar: "single_world_embodied_return"
+    style: "exact S1/S2 world"
+    camera: "return to the exact first-person spatial relationship and unfinished movement"
+    action: "the world is still 08:00:00; other lives remain only as faint peripheral echoes while protagonist recognizes this line has not lost them"
+    first_person_lines:
+      - "我原来以为，别处正在发生的是我没有得到的人生。"
+      - "后来才发现，它们从来没有从我的人生里被拿走。"
+    audio_cue: "body-near sound first; original city ambience gradually returns"
+    transition: "frozen world prepares to resume"
+
+  - id: S8
+    start_sec: 100
+    end_sec: 108
+    prototype_gate: true
+    prototype_range_sec: [100, 108]
+    cognitive_job: "make serial life a direct temporal action"
+    grammar: "single_world_next_second_coda"
+    style: "same as S1"
+    camera: "continue the exact unfinished first-person step/action; no new visual system"
+    action: "freeze releases; the step completes; 08:00:00 becomes 08:00:01"
+    text_cues:
+      - {at_sec: 102.0, text: "08:00:00"}
+      - {at_sec: 103.0, text: "08:00:01"}
+    optional_first_person_line: "世界还在同时发生。而我的下一秒，来了。"
+    audio_cue: "full concrete street sound returns with direction and distance"
+    transition: "end on ordinary continued motion"
+
+prototype_acceptance:
+  S1_S2:
+    - "first-person feels embodied and cinematic, not like a videogame camera"
+    - "normal world is credible before anomaly"
+    - "freeze is readable without exposition"
+  S3:
+    - "1→8 worlds are attractive and readable before 16→64 becomes overload"
+    - "all worlds share one style bible and still feel like different lives"
+    - "H3 Lite clips, if used, cut cleanly into the code-controlled window system"
+  S4:
+    - "one ordinary moment visibly has before/after context"
+    - "the queue feels unfinishable without becoming a UI carousel"
+  S7_S8:
+    - "return does not imply other lives were worthless"
+    - "08:00:00→08:00:01 reads without an explanatory thesis sentence"
+    - "the ending is simpler than the middle"
+
+next_artifacts:
+  - "00-pilot-lock.md"
+  - "02-style-bible.md"
+  - "03-prototypes/S1-S2-first-person-freeze.mp4"
+  - "03-prototypes/S3-world-overload.mp4"
+  - "03-prototypes/S4-context-dive.mp4"
+  - "03-prototypes/S7-S8-next-second.mp4"
+  - "04-first-person-lines/timing.md"
+  - "05-rough-cut/F01-pilot-v0.1.mp4"

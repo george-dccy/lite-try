@@ -1,0 +1,104 @@
+id: A08-sound-stays-where-spoken
+version: "0.1"
+status: draft
+
+source_domain:
+  - science
+  - fable
+
+question:
+  surface: "如果录下来的声音无法离开说话地点，人会怎么交流？"
+  core: "当信息必须依附于到达某个地方才能被接收，地点会怎样进入一句话的意义，人的路线又会怎样进入关系？"
+  why_i_care: "它把轻微的声学事实变成一个行为问题：理解一个人，是否有时需要真的走进他的生活路径？"
+
+mechanism:
+  one_sentence_model: "当信息重新与地点绑定，移动本身就会变成沟通的一部分。"
+  actors:
+    - "12岁女孩"
+    - "出租车司机父亲"
+  forces:
+    - "声音与空间介质的现实关系"
+    - "现代通信把声音与地点解耦"
+    - "两个人不同的日常移动路径"
+  feedback_loops:
+    - "地点留言 -> 对方到达 -> 选择新的回复地点 -> 形成私人地点语法"
+  evidence_status:
+    facts:
+      - "声音是机械波，需要介质传播。"
+      - "麦克风把声压变化转换为电信号并保存为信息。"
+      - "空间和材料会影响声音反射、吸收与混响。"
+    interpretations:
+      - "现代语音通信让语音信息通常不再要求接收者到达说话现场。"
+    hypotheses: []
+
+creative_hypothesis:
+  operation: "Remove + Localize"
+  changed_rule: "录音仍能发生，但语音信息无法离开产生它的地点；想听必须亲自到达。"
+  why_this_reveals_the_mechanism: "把声音与空间的现实关系放大成社会行为约束，让地点与移动进入交流本身。"
+
+world:
+  rule: "人在哪里说，一段录音就只能留在哪里。"
+  invariant: "只有这一条核心规则。"
+  forbidden_shortcuts:
+    - "不新增特殊设备"
+    - "不增加只有某些人能听的规则"
+    - "不让声音神秘消失"
+    - "不靠事故或死亡强行催泪"
+
+human_stakes:
+  ordinary_life_change: "留言、回复和等待开始依赖实际路线。"
+  who_adapts_first: "父女把常去地点发展成只有彼此懂的地点语法。"
+  who_pays_cost: "当路线分开，原本顺路的交流开始失效。"
+
+story:
+  protagonist: "12岁女孩"
+  relationship: "女孩 × 出租车司机父亲"
+  external_task: "通过分散在城市里的地点留言维持并重新建立交流。"
+  obstacle: "父亲接单习惯改变后，两人的日常路线不再重叠。"
+  repeated_action: "一人把声音留在地点，另一人走过去听，再把回应留到新的地方。"
+  state_changes:
+    - "提醒"
+    - "回应"
+    - "私人习惯"
+    - "路线错开"
+    - "主动回避"
+    - "邀请"
+    - "父亲走进女儿的生活路径"
+  ending_image: "父亲把车停远，第一次步行走过女儿每天从学校后门走出的那段路。"
+  ending_question: "当我们可以随时听见一个人的声音时，我们是不是反而更少真正走进他每天生活的地方？"
+
+knowledge_payload:
+  child_layer:
+    - "声音与空气、墙壁、空间有关。"
+    - "不同地点有不同的声音特征。"
+    - "一条简单规则会改变人的生活习惯。"
+  adult_layer:
+    - "信息技术把理解一个人与抵达他的生活现场分开了。"
+    - "关系里有些东西不是更多消息能解决，而是需要改变自己的路线。"
+  optional_afterword:
+    - "现实中声音传播与录音原理的轻量说明。"
+
+expression:
+  primary_mode: "story"
+  renderer_candidates:
+    - "story-film"
+    - "hybrid"
+    - "article"
+    - "parent-child-discussion"
+  must_preserve:
+    - "出租车司机父亲"
+    - "地点参与一句话意义"
+    - "重复动作逐次改义"
+    - "Fact 与 Fictional Rule 明确分层"
+    - "科学轻进入，不变成课堂"
+    - "结尾用父亲实际走路收束"
+  may_change:
+    - "具体地点"
+    - "片长"
+    - "镜头风格"
+    - "文章叙述人称"
+
+creator_notes:
+  what_surprised_me: "到达本身可以成为一种回应。"
+  what_i_am_not_sure_about: "中段路线分开怎样靠具体动作而不是旁白概括。"
+  what_i_refuse_to_simplify: "不把它缩成‘声音需要介质传播’的知识点换皮。"

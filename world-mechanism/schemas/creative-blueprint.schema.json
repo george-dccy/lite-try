@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Creative Blueprint",
+  "type": "object",
+  "required": ["id", "version", "question", "mechanism", "creative_hypothesis", "knowledge_payload"],
+  "properties": {
+    "id": {"type": "string"},
+    "version": {"type": "string"},
+    "status": {"enum": ["draft", "review", "approved", "retired"]},
+    "source_domain": {"type": "array", "items": {"type": "string"}},
+    "cultural_lens": {
+      "type": "object",
+      "properties": {
+        "primary_context": {"type": "string"},
+        "secondary_context": {"type": "array", "items": {"type": "string"}},
+        "why_this_context": {"type": "string"},
+        "avoid_default_foreign_case": {"type": "boolean"}
+      }
+    },
+    "question": {"type": "object"},
+    "mechanism": {"type": "object"},
+    "creative_hypothesis": {"type": "object"},
+    "world": {"type": "object"},
+    "human_stakes": {"type": "object"},
+    "story": {"type": "object"},
+    "content_progression": {"type": "array", "items": {"type": "string"}},
+    "knowledge_payload": {
+      "type": "object",
+      "properties": {
+        "child_layer": {"type": "array", "items": {"type": "string"}},
+        "adult_layer": {"type": "array", "items": {"type": "string"}},
+        "optional_afterword": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "expression": {"type": "object"},
+    "creator_notes": {"type": "object"}
+  }
+}

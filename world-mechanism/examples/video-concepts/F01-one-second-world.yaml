@@ -1,0 +1,167 @@
+id: F01-one-second-world
+version: "0.3"
+status: approved
+source_blueprint: "examples/blueprints/F01-world-second.yaml"
+
+target_duration:
+  min_sec: 90
+  max_sec: 110
+
+pilot_intent: "先用一支1–2分钟成片验证世界机制故事引擎能否把有深度的Content Master稳定编译成可观看作品；F01不是在本阶段被雕琢成终极代表作。"
+
+core_cognitive_turn: "同一参考时刻，世界可以并行发生无数完整生活；但一个人的经验只能沿自己的上下文串行发生。别处的完整不是我失去的人生，知道、观看、筛选甚至短暂进入别人的片段，也不会让它自动接到我的昨天和下一秒。"
+
+experience_mode: "embodied_first_person"
+experience_rule: "整支片以‘我正在经历’为主体，而不是作者站在画外解释。允许极少量第一人称自述/内心句开启问题和完成必要认知转折，但Visual Proof段必须让画面、声音和动作自己成立。"
+
+visual_argument: "先建立正常世界中的我的连续早晨；08:00:00突然停住，我获得进入同一参考瞬间其他生活的异常能力。随后依次真诚尝试全部同时体验、逐个进入并补看上下文、让AI总结、只挑最精彩四种方案。每种方案都解决前一层问题，也暴露新的限制。最后回到仍停在08:00:00的我的世界，让08:00:01自然接上，以时间动作而不是说教完成结论。"
+
+recurring_motifs:
+  - "08:00:00 / 08:00:01"
+  - "第一人称身体线索：手、脚步、呼吸、影子、反射、视线转动"
+  - "窗口 / 世界入口"
+  - "别人的上一秒与下一秒形成上下文"
+  - "我的世界停住与重新继续"
+
+sound_design:
+  principle: "声音沿第一人称经验组织：我的世界先是完整单一声场；时间停住后骤然抽空；进入别人生活时恢复那个生活的空间声；同时体验阶段逐层拥挤；AI摘要阶段失去空间；最终回到我的身体和街道，具体声场重新完整。"
+  avoid:
+    - "全程解释性配音"
+    - "宏大煽情音乐替代认知转折"
+    - "用持续BGM把互不连续的人生片段粘成一个假故事"
+
+motion_strategy:
+  renderer: "art-motion"
+  upstream: "third_party/huashu-art-motion"
+  base_style: "unified contemporary illustration"
+  local_motion_backend: "MiniMax H3 Lite may generate bounded living-motion clips inside the unified style; Codex/art-motion retains timeline, camera system, windows, typography, transitions, sound cues, composition and QA."
+  rule: "本Pilot优先验证单一当代插画宇宙；不把多画风本身当论证。动画语法仍按cognitive job路由。"
+  grammar_map:
+    B1: "embodied first-person continuous scene"
+    B2: "time freeze / anomaly reveal"
+    B3: "window multiplication + sound overload"
+    B4: "context dive + long-scroll endless queue"
+    B5: "keynote information abstraction"
+    B6: "curated highlight montage without shared continuity"
+    B7: "collapse to one embodied first-person world"
+    B8: "single-world next-second coda"
+
+beats:
+  - id: B1
+    duration_sec: 12
+    visual_state: "正常中国城市早晨。第一人称/半主观地出门、经过早餐点、穿过街口或进入通勤流；手、脚步、影子或玻璃反射建立‘这是我的身体和我的路线’。"
+    audio_state: "完整、具体、有方向的早晨空间声。"
+    first_person_expression: "极少量自述开启问题：我一直有个很奇怪的念头——同一秒钟，世界其他地方的人正在经历什么？"
+    cognitive_function: "先建立正常时间规律和一条可以连续生活下去的‘我的线’。"
+    transition: "视线落到08:00:00；世界突然停止。"
+
+  - id: B2
+    duration_sec: 8
+    visual_state: "08:00:00冻结。行人、车辆、风中物体全部停住，但第一人称仍能呼吸、转头、移动手或迈步；画面边缘出现第一个通往别处生活的入口。"
+    audio_state: "城市声场骤然抽空，只留身体近声；随后远处传来不属于这里的另一空间声。"
+    first_person_expression: "不解释规则，只表现‘那个念头突然变成了能力’。"
+    cognitive_function: "把抽象问题变成一个可亲自测试的异常。"
+    transition: "第一个别处生活打开，随后更多入口出现。"
+
+  - id: B3
+    duration_sec: 15
+    visual_state: "先进入一个别处生活，再允许2→4→8→16→64同时打开。前8格每个生活都有清楚动作；之后窗口仍在运动，但注意力和画面尺度开始崩溃。"
+    audio_state: "每增加一个世界就增加一条真实空间声；前期诱人，后期无法分辨。"
+    first_person_expression: "不抢着下结论；让‘既然可以，那我就全部一起体验’通过行为成立。"
+    cognitive_function: "第一层Wish Fulfillment：全部同时拥有确实消除了错过，但也摧毁了体验的前景与上下文。"
+    transition: "过载突然切断，只留下一个世界。"
+
+  - id: B4
+    duration_sec: 17
+    visual_state: "改成一次只进入一个人的生活。选一个具体普通时刻，例如父亲松开扶着孩子自行车的手；当前一秒被展开，观众短暂看到它前面的练习/跌倒/再次尝试，并看到下一秒孩子继续骑出去。退出后，更多生活沿长卷/队列不断排入，永远看不到尽头。"
+    audio_state: "当前生活恢复完整声场；每切换一个人，空间声随之改变。"
+    first_person_expression: "可以有一句极短发现：这一秒不是单独的一秒。"
+    cognitive_function: "第二层Wish Fulfillment：逐个体验恢复了上下文，却暴露出每一个可理解的瞬间都拖着一条更长的个人时间，而一个人无法补完世界的一秒。"
+    transition: "无限队列被压缩成一个高效摘要系统。"
+
+  - id: B5
+    duration_sec: 14
+    visual_state: "AI把世界转成简洁类别、事件、代表画面和短句：学会骑车、重逢、收到消息、雨停、下班、出发……信息覆盖率迅速提升。"
+    audio_state: "干净、无方向、无空间感的信息声；真实环境几乎消失。"
+    first_person_expression: "只在视觉已经成立后留一句：我知道了发生了什么，可我没有活过它。"
+    cognitive_function: "第三层Wish Fulfillment：摘要解决时间容量问题，却把‘知道’与‘经历’分开。"
+    transition: "系统进一步提出只保留最值得体验的瞬间。"
+
+  - id: B6
+    duration_sec: 14
+    visual_state: "求婚、夺冠、日落、久别重逢、第一次看海等高光被完整、漂亮、可信地呈现；视觉仍保持统一当代插画语言，只通过构图、光、动作和节奏变化建立高光感。随后它们并列成为一组互不相连的片段。"
+    audio_state: "每个高光拥有自己的短声场，但彼此没有共享的环境底噪或连续音乐。"
+    first_person_expression: "不批评精彩，只让主角逐渐察觉：它们都有自己的前一秒和后一秒，却没有共同接到我的昨天后面。"
+    cognitive_function: "第四层Wish Fulfillment：最好的筛选能得到更好的片段，却不能把别人的片段变成我的连续人生。"
+    transition: "高光逐个退去，露出最初冻结的我的世界。"
+
+  - id: B7
+    duration_sec: 20
+    visual_state: "回到原来的第一人称位置，时间仍是08:00:00。街道、行人、车和风保持冻结。观众知道别处生活都真实存在并继续有自己的上下文，但它们不再占据主画面。"
+    audio_state: "先是近乎安静，只剩身体声；随后原世界的环境声开始一点点回来。"
+    first_person_expression: "允许两句以内的收束：我原来以为，别处正在发生的是我没有得到的人生。后来才发现，它们从来没有从我的人生里被拿走。"
+    cognitive_function: "把‘别处完整 ≠ 此处残缺’落到第一人称经验，而不是价值劝诫。"
+    transition: "世界准备重新启动。"
+
+  - id: B8
+    duration_sec: 8
+    visual_state: "冻结解除。第一人称继续刚才未完成的一步或动作。08:00:00自然进入08:00:01；不再增加视觉系统。"
+    audio_state: "完整街道声场恢复，脚步、风、车流重新有距离和方向。"
+    first_person_expression: "可选最后一句：世界还在同时发生，而我的下一秒来了。若画面已足够，则完全不说。"
+    cognitive_function: "最终Visual Proof：不是选出了最正确的人生，而是我的这一秒确实接上了我的下一秒。"
+    transition: "普通动作中结束。"
+
+first_person_policy:
+  mode: "体验优先，语言极少"
+  allowed:
+    - "开头提出真实问题"
+    - "四次方案之间极短的第一人称自然念头"
+    - "结尾两句以内的认知收束"
+  forbidden:
+    - "把整篇文章改成持续画外旁白"
+    - "逐条解释画面已经证明的机制"
+    - "像知识博主一样对观众讲话"
+
+text_policy:
+  allow:
+    - "08:00:00"
+    - "08:00:01"
+    - "AI摘要段极少量必要信息"
+  avoid:
+    - "大段哲学字幕"
+    - "世界各城市地名堆叠"
+    - "鸡汤式总结句"
+    - "把‘世界并行，人生串行’反复作为口号打出"
+
+must_preserve:
+  - "同一世界正常运行 → 08:00:00异常冻结 → 能力被逐层测试 → 回到08:00:00 → 08:00:01"
+  - "全部同时、逐个补看、AI总结、只选精彩四种方案必须依次被真诚满足"
+  - "逐个进入别人生活时必须让观众感到该瞬间有自己的前后上下文"
+  - "知道更多不等于经历更多"
+  - "别人的高光没有被贬低；问题只在于它们不会自动成为我的连续时间"
+  - "最终证明是08:00:00进入08:00:01，而不是象征道具"
+  - "别处生活继续完整存在，不构成我这里缺失的一块"
+  - "结尾不落到遗憾、宿命、平凡最珍贵或珍惜当下"
+  - "不重新引入杯子左手边 / 酒店摸空 / 重复赋义支线"
+
+production_lock:
+  state: "locked_for_pilot"
+  rule: "从本版起到first rough cut前，不再重写Content Master或核心认知链。只允许镜头、时长、台词压缩、动作、视觉、声音和技术实现调整。若prototype暴露明确的上游逻辑失败，记录后最多允许一次结构修改。"
+
+renderer_handoff:
+  preferred_renderer: "renderers/art-motion"
+  production_design: "renderers/art-motion/F01-production-design.md"
+  next:
+    - "Unified Illustration Style Bible"
+    - "First-person opening/freeze prototype"
+    - "S3 simultaneous-world prototype"
+    - "S4 context-dive / long-scroll prototype"
+    - "S8 08:00:00→08:00:01 prototype"
+    - "Sparse first-person line timing"
+    - "Rough cut"
+  locked:
+    - "core cognitive turn"
+    - "four-step wish-fulfillment chain"
+    - "first-person experiential form"
+    - "production_lock"
+    - "must_preserve"

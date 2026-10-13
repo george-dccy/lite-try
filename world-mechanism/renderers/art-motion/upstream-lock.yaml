@@ -1,0 +1,18 @@
+name: huashu-art-motion
+repository: https://github.com/alchaincyf/huashu-art-motion.git
+commit: 26dba25b2b495c2138848c29a2c90df356a20325
+locked_at: 2026-10-07
+license: MIT
+integration_mode: git-submodule
+local_path: third_party/huashu-art-motion
+capabilities:
+  art_styles: 35
+  explainer_grammars: 9
+  parameterized_clips: true
+  long_scroll: true
+  character_compositing: true
+  qa: true
+policy:
+  - upstream code remains attributable under MIT
+  - world-mechanism-story-engine owns routing, story logic, motion plans, and production decisions
+  - upstream updates require deliberate review; do not float on main

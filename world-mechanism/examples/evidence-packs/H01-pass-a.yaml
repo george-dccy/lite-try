@@ -1,0 +1,132 @@
+id: H01-pass-a
+mode: pass-a
+checked_at: "2026-10-01"
+scope:
+  geography: "China"
+  period: "traditional timekeeping to contemporary national standard time"
+status: partially-supported
+premise: "北京时间就是北京当地的太阳时间，而且应该由北京产生。"
+
+claims:
+  - claim_id: H01-F01
+    claim: "中国科学院国家授时中心承担国家标准时间（北京时间）的产生、保持和发播任务，总部位于陕西省西安市临潼区。"
+    label: F
+    confidence: high
+    source_ids: [S1]
+    allowed_wording: "我国国家标准时间（北京时间）由位于西安临潼的中国科学院国家授时中心承担产生、保持和发播任务。"
+    do_not_strengthen_to: "全国所有手机都直接从西安接收时间。"
+
+  - claim_id: H01-F02
+    claim: "北京时间采用东八区标准时间，对应东经120°标准经线，并不等同于北京当地的地方平太阳时。"
+    label: F
+    confidence: high
+    source_ids: [S2]
+    allowed_wording: "北京时间对应东八区标准时间，并非北京当地太阳时。"
+    do_not_strengthen_to: "北京时间和北京没有关系。"
+
+  - claim_id: H01-F03
+    claim: "1949年9月28日，北京新华广播电台开始播报‘北京时间’，之后多地逐步采用。"
+    label: F
+    confidence: medium
+    source_ids: [S3]
+    allowed_wording: "国家授时中心的历史资料记载，1949年9月28日北京新华广播电台开始使用‘北京时间’播报。"
+    do_not_strengthen_to: "1949年9月28日全国在同一瞬间统一改用北京时间。"
+
+  - claim_id: H01-F04
+    claim: "中国传统时间体系长期存在观象、历法和授时实践；宋代已有观象测时、定时授时与历法计时构成的完整时间系统。"
+    label: F
+    confidence: high
+    source_ids: [S4, S5]
+    allowed_wording: "中国传统天文学长期重视观象授时，宋代已形成完整的时间测量与授时体系。"
+    do_not_strengthen_to: "古代中国已经实现现代意义上的全国统一标准时和秒级同步。"
+
+  - claim_id: H01-F05
+    claim: "20世纪60年代我国因战略和航天等高精度授时需求在陕西建设专门授时体系，关中位置有利于无线电信号覆盖。"
+    label: F
+    confidence: high
+    source_ids: [S6]
+    allowed_wording: "上世纪60年代，因国家战略和航天等高精度授时需求，我国在陕西关中建设专门授时台，地理位置也有利于无线电授时覆盖。"
+    do_not_strengthen_to: "国家授时中心设在西安只是因为西安位于中国地理中心。"
+
+  - claim_id: H01-I01
+    claim: "标准时间是一项公共基础设施：它把时间测量结果转化为社会可共同使用、可追溯的时间坐标。"
+    label: I
+    confidence: high
+    source_ids: [S1, S7]
+    allowed_wording: "可以把现代标准时间理解为一种支撑交通、通信、导航、科研等系统协同的基础设施。"
+    do_not_strengthen_to: "统一时间只有国家治理功能。"
+
+sources:
+  - source_id: S1
+    title: "中心简介"
+    publisher: "中国科学院国家授时中心"
+    url: "https://www.ntsc.cas.cn/dwgk/zxjj/"
+    publication_date: null
+    source_tier: 1
+    primary: true
+    notes: "国家授时中心职责、所在地、UTC(NTSC)及原子钟组。"
+
+  - source_id: S2
+    title: "探寻时间的秘密"
+    publisher: "中国科学院西安分院 / 三秦都市报"
+    url: "https://www.xab.cas.cn/cmsj/201911/t20191114_5431774.html"
+    publication_date: "2019-11-14"
+    source_tier: 2
+    primary: false
+    notes: "解释东经120°、北京经度以及北京时间在西安产生。"
+
+  - source_id: S3
+    title: "70th Anniversary of Beijing Time—The Birth of Beijing Time"
+    publisher: "National Time Service Center, CAS"
+    url: "https://english.ntsc.cas.cn/newsroom/sr/202108/t20210811_277972.html"
+    publication_date: "2021"
+    source_tier: 2
+    primary: false
+    notes: "1949年‘北京时间’名称和早期推广时间线。"
+
+  - source_id: S4
+    title: "宋代时间测量与计算"
+    publisher: "中国科学院国家授时中心《时间频率学报》"
+    url: "https://www.ntsc.cas.cn/xscbw_/sjplxb/qkml/2012nd1q_173857/202011/t20201123_5774574.html"
+    publication_date: "2012"
+    source_tier: 2
+    primary: false
+    notes: "传统时间系统：定时授时、观象测时、历法计时。"
+
+  - source_id: S5
+    title: "《古历兴衰：授时历与大统历》简介"
+    publisher: "中国科学院自然科学史研究所"
+    url: "https://ihns.cas.cn/yjcg/xszz/zztj/202212/t20221207_6570685.html"
+    publication_date: "2017-06-06"
+    source_tier: 2
+    primary: false
+    notes: "传统历法与授时历历史纵深。"
+
+  - source_id: S6
+    title: "北京时间从这里发布——探访中国科学院国家授时中心"
+    publisher: "中国科学院西安分院 / 科技日报"
+    url: "https://www.xab.cas.cn/tpxw/201903/t20190326_5261862.html"
+    publication_date: "2019-03-26"
+    source_tier: 2
+    primary: false
+    notes: "1960年代陕西授时体系建设背景和覆盖因素。"
+
+  - source_id: S7
+    title: "主任致辞"
+    publisher: "中国科学院国家授时中心"
+    url: "https://ntsc.cas.cn/zrzc/"
+    publication_date: null
+    source_tier: 1
+    primary: true
+    notes: "精密时间作为国家基础工程及其应用。"
+
+evidence_gaps:
+  - "1949—1950年各地区采用北京时间的精确时间线，如进入正文需继续Pass B。"
+  - "古代‘授时’只做机制纵深，需避免与现代统一标准时间同义化。"
+  - "终端设备如何从通信网络、卫星导航、NTP等链路获得可溯源时间，需要按具体应用再研究。"
+
+mechanism_correction: "H01从‘铁路推动标准时间’升级为‘标准时间是一套把共同未来坐标产生、保持、校准并传播给社会的基础设施’，中国历史与现代国家授时体系成为主叙事。"
+do_not_strengthen:
+  - "不要说北京时间是北京当地太阳时。"
+  - "不要说每台手机直接连接国家授时中心。"
+  - "不要把古代授时等同于现代原子时或全国秒级同步。"

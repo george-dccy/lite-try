@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Video Production Manifest",
+  "type": "object",
+  "required": ["id", "version", "status", "medium", "sources", "locks", "renderer", "stages", "codex", "qa"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "minLength": 1},
+    "status": {
+      "enum": [
+        "creative_keep",
+        "blueprint_ready",
+        "content_master_ready",
+        "video_concept_ready",
+        "director_proposal_ready",
+        "production_initialized",
+        "style_routed",
+        "motion_plan_ready",
+        "keyframe_gate",
+        "prototype_gate",
+        "timing_ready",
+        "rough_cut",
+        "qa_review",
+        "release_candidate",
+        "released",
+        "retrospective"
+      ]
+    },
+    "medium": {"const": "video"},
+    "sources": {"type": "object"},
+    "locks": {
+      "type": "object",
+      "required": ["must_preserve"],
+      "properties": {
+        "must_preserve": {"type": "array", "items": {"type": "string"}},
+        "factual_constraints": {"type": "array", "items": {"type": "string"}},
+        "creator_decisions": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "renderer": {
+      "type": "object",
+      "required": ["primary", "production_mode", "style_count_strategy", "selected_styles", "selected_grammars"],
+      "properties": {
+        "primary": {"type": "string"},
+        "upstream": {"type": "string"},
+        "production_mode": {"const": "codex_first"},
+        "style_count_strategy": {
+          "enum": ["single_style", "sectional_styles", "parallel_world_styles", "speedrun_styles", "hybrid_assets"]
+        },
+        "selected_styles": {"type": "array", "items": {"type": ["string", "object"]}},
+        "selected_grammars": {"type": "array", "items": {"type": ["string", "object"]}},
+        "selection_rationale": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "asset_policy": {"type": "object"},
+    "stages": {"type": "object"},
+    "codex": {
+      "type": "object",
+      "required": ["current_goal", "next_actions"],
+      "properties": {
+        "current_goal": {"type": "string"},
+        "completed_tasks": {"type": "array", "items": {"type": "string"}},
+        "next_actions": {"type": "array", "items": {"type": "string"}},
+        "blockers": {"type": "array", "items": {"type": "string"}},
+        "reusable_engine_changes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "renders": {"type": "object"},
+    "qa": {
+      "type": "object",
+      "required": ["upstream_qa_run", "independent_review_complete"],
+      "properties": {
+        "upstream_qa_run": {"type": "boolean"},
+        "subtitle_zone_checked": {"type": "boolean"},
+        "independent_review_complete": {"type": "boolean"},
+        "open_findings": {"type": "array"},
+        "resolved_findings": {"type": "array"}
+      }
+    },
+    "resume_instruction": {"type": "string"}
+  }
+}

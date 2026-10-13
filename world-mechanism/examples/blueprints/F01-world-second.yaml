@@ -1,0 +1,116 @@
+id: F01-world-second
+version: "0.2"
+status: review
+
+source_domain:
+  - culture
+  - philosophy
+  - society
+
+cultural_lens:
+  primary_context: "personal lived experience in Chinese-language context"
+  secondary_context:
+    - "global human experience"
+  why_this_context: "起点来自作者自己的生活感受；全球不同地点只是为了构成‘同一参考时刻的并行生活’，不做异国风景展示。"
+  avoid_default_foreign_case: true
+
+question:
+  surface: "同一个参考时刻，世界上那么多人正在经历完全不同的生活；为什么我只能经历眼前这一份？"
+  core: "世界的丰富与一个人生命的完整，是否本来就是两种不同尺度？"
+  why_i_care: "我不再想把别处没有经历的生活理解成自己的缺失，而想理解：时间为什么只把一条连续经历线交给每个人。"
+
+mechanism:
+  one_sentence_model: "世界可以并行发生无数事情，但一个人的经验只能随时间串行进入一条连续的第一人称时间线；生命的完整并不依赖覆盖世界，而依赖这条线自身的连续展开。"
+  actors:
+    - "一个具体的人"
+    - "他此刻正在经历的生活"
+    - "同一参考时刻世界其他地方正在发生的生活"
+  forces:
+    - "一个身体只能占据一个位置"
+    - "注意力只能形成有限前景"
+    - "经验按时间连续积累"
+    - "记忆、关系与意义依赖前后文"
+  feedback_loops:
+    - "越把别处生活当成自身缺失 -> 越追求覆盖更多 -> 越混淆世界丰富度与个人完整度"
+    - "越理解时间线连续性 -> 越能把眼前经验看作完整人生的一部分，而非世界总量的残片"
+  evidence_status:
+    facts: []
+    interpretations:
+      - "世界的事件可以同时发生，但个体经验只能沿单一身体和注意力连续展开。"
+      - "一段经历的个人意义依赖它和既往记忆、关系与之后生活的联系。"
+    hypotheses:
+      - "把世界丰富度和人生完整度区分开，可能减少‘没有经历别处就是缺失’的直觉。"
+
+creative_hypothesis:
+  operation: "Wish Fulfillment + Timeline Reveal"
+  entry_point: "如果你能同时拥有世界同一秒发生的一切，会不会更完整？"
+  surprise_source: "不断提高世界覆盖率，并没有自动提高第一人称经历的完整性。"
+  changed_rule: "依次允许同时体验全部、逐个回放、AI总结、只挑最精彩，再把注意力从‘覆盖世界’转向‘一条时间线如何成为自己的全部’。"
+  why_this_reveals_the_mechanism: "读者自己发现世界可以无限并行，而人生只能串行；后者不是残缺，而是第一人称生命存在的基本形式。"
+  first_association_rejected:
+    - "珍惜当下"
+    - "FOMO心理学"
+    - "人生遗憾"
+    - "错过构成人生"
+    - "世界各地唯美蒙太奇"
+
+world:
+  rule: "思想实验允许将别人的主观体验完整接入、回放或总结。"
+  invariant: "技术只能改变信息与体验的可访问性，不能让一个人同时拥有多条连续第一人称生命史。"
+  forbidden_shortcuts:
+    - "不走宿命论"
+    - "不说一切发生都是应该的"
+    - "不反旅行和探索"
+    - "不把别人的生活贬为与我无关的噪声"
+    - "不把内容归结为人生缺失或遗憾"
+
+content_progression:
+  - "同一参考时刻，世界有无数种生活"
+  - "我想全部体验"
+  - "同时全部：覆盖率极高，但具体体验失去前景"
+  - "逐个回放：可以理解更多，却无法把世界一秒变成自己的一秒"
+  - "AI总结：世界信息更完整，但并未变成自己的经历"
+  - "只选最精彩：片段价值无法脱离个人前后文"
+  - "认知转向：世界丰富度与人生完整度不是同一个指标"
+  - "核心揭示：世界并行，人生串行"
+  - "开放结尾：别处生活完整存在，我眼前这一份也并不因此残缺"
+
+knowledge_payload:
+  child_layer:
+    - "同一时间，世界不同地方会发生不同的事情。"
+    - "一个人只能真正生活在自己所在的地方和自己的时间里。"
+    - "别人的生活很丰富，不代表自己的这一刻少了什么。"
+  adult_layer:
+    - "时间让个体经验成为一条连续的第一人称生命线。"
+    - "世界丰富度与个人完整感属于不同尺度。"
+    - "所谓当下，可以被理解为世界与自己时间线实际相交的那一刻。"
+  optional_afterword:
+    - "可选用‘worldline/世界线’作为科学隐喻，但不得用相对论为人生观点背书。"
+
+expression:
+  primary_mode: "philosophical-essay-with-visual-argument"
+  renderer_candidates:
+    - "article"
+    - "hybrid-video"
+    - "minimal-line"
+    - "parent-child-discussion"
+  content_master: "content-masters/F01-you-cant-live-a-second.md"
+  video_concept: "examples/video-concepts/F01-one-second-world.yaml"
+  must_preserve:
+    - "世界并行，人生串行"
+    - "世界丰富度 ≠ 个人生命完整度"
+    - "不归结为遗憾"
+    - "不走宿命论"
+    - "不提前说珍惜当下"
+    - "别处生活同样完整，我的生活也同样完整"
+  may_change:
+    - "是否显式使用AI层"
+    - "世界同一秒的具体生活片段"
+    - "标题"
+    - "文章与视频长度"
+
+creator_notes:
+  what_surprised_me: "真正触动我的不是‘错过’，而是世界可以同时有无数种生活，而每个人只沿自己的那条线活下去，这条线本身就已经是其全部。"
+  what_i_am_not_sure_about: "如何把‘应该经历的全部’表达得不落入宿命论。"
+  what_i_refuse_to_simplify: "不把它归结成‘人生有遗憾所以珍惜当下’。"
+  human_feedback: "作者明确修正：不希望落到缺失或遗憾，更接近‘别处发生的与我不构成竞争，我所经历的就是我这条时间线的全部’。"

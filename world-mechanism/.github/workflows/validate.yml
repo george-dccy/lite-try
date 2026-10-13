@@ -1,0 +1,39 @@
+name: validate-engine
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install validation dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Validate Creative Blueprints
+        run: python scripts/validate_blueprints.py
+
+      - name: Validate Evidence Packs
+        run: python scripts/validate_evidence_packs.py
+
+      - name: Validate Video Concepts
+        run: python scripts/validate_video_concepts.py
+
+      - name: Validate Director Proposals
+        run: python scripts/validate_director_proposals.py
+
+      - name: Validate Video Production Manifests
+        run: python scripts/validate_video_productions.py
+
+      - name: Validate Skill contracts
+        run: python scripts/validate_skill.py

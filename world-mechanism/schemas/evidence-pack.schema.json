@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evidence Pack",
+  "type": "object",
+  "required": ["id", "mode", "checked_at", "scope", "status", "claims", "sources"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "mode": {"enum": ["pass-a", "pass-b"]},
+    "checked_at": {"type": "string", "format": "date"},
+    "scope": {"type": "object"},
+    "status": {
+      "enum": [
+        "supported",
+        "partially-supported",
+        "unsupported",
+        "ambiguous",
+        "contested",
+        "evidence-sufficient",
+        "evidence-sufficient-with-caveats",
+        "needs-research",
+        "blocked-by-uncertainty"
+      ]
+    },
+    "premise": {"type": "string"},
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "claim", "label", "confidence"],
+        "properties": {
+          "claim_id": {"type": "string"},
+          "claim": {"type": "string"},
+          "label": {"enum": ["F", "I", "H", "R"]},
+          "confidence": {"enum": ["high", "medium", "low"]},
+          "scope": {},
+          "source_ids": {"type": "array", "items": {"type": "string"}},
+          "allowed_wording": {"type": "string"},
+          "do_not_strengthen_to": {"type": "string"}
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "title", "publisher", "url"],
+        "properties": {
+          "source_id": {"type": "string"},
+          "title": {"type": "string"},
+          "publisher": {"type": "string"},
+          "url": {"type": "string"},
+          "publication_date": {"type": ["string", "null"]},
+          "source_tier": {"type": "integer", "minimum": 1, "maximum": 4},
+          "primary": {"type": "boolean"},
+          "notes": {"type": "string"}
+        }
+      }
+    },
+    "evidence_gaps": {"type": "array", "items": {"type": "string"}},
+    "mechanism_correction": {"type": "string"},
+    "do_not_strengthen": {"type": "array", "items": {"type": "string"}}
+  }
+}

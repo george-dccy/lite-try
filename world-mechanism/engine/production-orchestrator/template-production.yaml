@@ -1,0 +1,106 @@
+id: "<production-id>"
+version: "0.1"
+status: production_initialized
+medium: video
+
+sources:
+  creative_candidate: ""
+  blueprint: ""
+  evidence_pack: ""
+  content_master: ""
+  video_concept: ""
+  director_proposal: ""
+
+locks:
+  must_preserve: []
+  factual_constraints: []
+  creator_decisions: []
+
+renderer:
+  primary: "renderers/art-motion"
+  upstream: "third_party/huashu-art-motion"
+  production_mode: codex_first
+  style_count_strategy: "single_style | sectional_styles | parallel_world_styles | speedrun_styles | hybrid_assets"
+  selected_styles: []
+  selected_grammars: []
+  selection_rationale: []
+
+asset_policy:
+  generated_images:
+    allowed: true
+    uses: []
+  generated_video:
+    default: false
+    clips: []
+    # Each optional clip should record:
+    # - id
+    # - scene
+    # - reason_code_is_inferior
+    # - provider/model
+    # - prompt_or_source
+    # - settings
+    # - replacement_boundary
+
+stages:
+  creative_gate:
+    state: passed
+    evidence: "KEEP"
+  blueprint:
+    state: pending
+  research_pass_b:
+    state: conditional
+  content_master:
+    state: pending
+  video_concept:
+    state: pending
+  director_proposal:
+    state: pending
+  style_routing:
+    state: pending
+  keyframe_gate:
+    state: pending
+    candidates: []
+    selected: ""
+  prototype_gate:
+    state: pending
+    prototypes: []
+  narration_timing:
+    state: conditional
+    narration_file: ""
+    words_file: ""
+  rough_cut:
+    state: pending
+    latest: ""
+  qa_review:
+    state: pending
+    latest_log: ""
+  release_gate:
+    state: pending
+    candidate: ""
+  retrospective:
+    state: pending
+
+codex:
+  current_goal: ""
+  completed_tasks: []
+  next_actions: []
+  blockers: []
+  reusable_engine_changes: []
+
+renders:
+  stills: []
+  prototypes: []
+  rough_cuts: []
+  release_candidates: []
+
+qa:
+  upstream_qa_run: false
+  subtitle_zone_checked: false
+  independent_review_complete: false
+  open_findings: []
+  resolved_findings: []
+
+resume_instruction: >-
+  Read this manifest, then linked Content Master, Video Concept, Director Proposal,
+  Motion Plan and latest QA log. Continue from codex.next_actions. Do not restart
+  creative exploration unless an upstream failure is explicitly logged.
