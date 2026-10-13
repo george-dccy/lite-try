@@ -1,0 +1,12 @@
+{
+  "title": "一颗球落下：规则开始起作用",
+  "width": 1280, "height": 720, "fps": 30, "duration": 4.0,
+  "bpm": 120,
+  "ev": {
+    "drop": 0.15,
+    "impact": 1.0,
+    "label": 1.35,
+    "hero": 2.5,
+    "settle": 3.1
+  }
+}

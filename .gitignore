@@ -4,6 +4,15 @@ dist/
 temp/
 tmp/
 
+# video-kit 运行时中间产物（验收结果移入 build/ 保存）
+engine/video-kit/frames/
+engine/video-kit/stills/
+engine/video-kit/audio.wav
+engine/video-kit/audio_master.wav
+engine/video-kit/video.mp4
+engine/video-kit/contact.png
+engine/video-kit/motion.json
+
 # 依赖包
 node_modules/
 .npm/
