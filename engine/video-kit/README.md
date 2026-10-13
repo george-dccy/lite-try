@@ -11,3 +11,5 @@ sh run.sh
 ```
 
 依赖：Node 18+、Playwright/Chromium、Python 3、numpy、ffmpeg。脚手架默认输出 video.mp4、contact.png 和中间目录。验证目标为精确 4.000 s、−14 ±1 LUFS、真峰 ≤ −1 dBTP；完整检查仍按 Notion 视频机制 §8 执行。
+
+Windows 若 `python3` 被 Microsoft Store 占位别名拦截，可在 Git Bash 中用当前 Python 解释器 source 运行：`python3() { python "$@"; }; . ./run.sh`。六个脚手架文件本身仍与 Notion 附录逐字同步。
