@@ -35,6 +35,8 @@ Notion 当前入口：
 
 所有 Notion 内容必须通过 Notion MCP 读取或写回。Notion 不可用、页面不可读或依赖缺失时，返回 `blocked`，不用仓库缓存、旧 Prompt 或模型记忆顶替。历史归档页不作为运行输入。
 
+入口规则：一般内容按“想法流水线｜工作台”走“念头 → 选题 → 贴图 / 长文 / 视频”；只做想象瞬间图时直接进入 v4.0 运行协议；导航页只给人看，不作为 Agent 运行入口。写作读取「写作机制 v1.0」，代码视频读取「创意视频机制 v1.0」。
+
 ## 工作边界
 
 - 先读取 Notion 产物页，再执行本地工作；不要在仓库重新写作或重建机制。
@@ -57,9 +59,13 @@ Notion 当前入口：
 - `outputs/`：验收后的成片、字幕、封面、贴图和发布包；`outputs/stickers/` 保存贴图发布包，不镜像 Notion 机制。
 - `notes/archive/2026-10-12/`：已由 Notion 接管的方法正文归档；原路径保留短指针，方便旧链接回溯。
 
+`.gitmodules` 中的 `creator-buddy` 和 `world-mechanism/third_party/huashu-art-motion` 只是可选参考依赖，当前保持未初始化；除非用户明确要求，不执行初始化。
+
 ## Notion 工作台路由
 
 宽泛请求改走 Notion 工作台 S1–S3：想法库 → 选题库 → KEEP / HOLD / REJECT。仓库不再生成本地候选卡。用户明确“做这个”时，从对应选题和产物页读取交接；没有拍板的候选不进入本地生产。
+
+数据只记一处：想象瞬间图记录在 Notion 07 发布包；贴图、公众号长文和视频记录在工作台产物库。不要为了仓库执行在两个库重复建同一条内容记录。
 
 人工关口对应关系：
 
@@ -72,7 +78,7 @@ Notion 当前入口：
 
 ### 贴图 / 双格观察卡
 
-走 `.agents/skills/yuguang-sticker-bridge/SKILL.md`，再通过 Notion MCP 读取有解贴图生成器。先在产物库落一条记录；标题和配文按写作机制 §8.1。Notion Skill 负责当前视觉、双格版式和生图规则；仓库只保存本轮输入、结果文件和 `sticker_manifest`。manifest 需要带 `notion_output_url`，并准确区分 `ready`、`prompt_ready` 和 `blocked`。
+走 `.agents/skills/yuguang-sticker-bridge/SKILL.md`，再通过 Notion MCP 读取有解贴图生成器。顺序固定为：先写 03/04 生成任务与逐图 Prompt → 在产物库创建一条关联 03 的记录 → 只有仓库需要保存成图或执行本地整理时，才把 manifest 交给仓库。标题和配文按写作机制 §8.1。Notion Skill 负责当前视觉、双格版式和生图规则；仓库只保存本轮输入、结果文件和 `sticker_manifest`。manifest 需要带 `notion_output_url`，并准确区分 `ready`、`prompt_ready` 和 `blocked`。
 
 ### 公众号长文
 
@@ -93,7 +99,7 @@ Notion 当前入口：
 
 ### 想象瞬间 / Edge of Sight
 
-静态生图不在本仓库执行，走 Notion 生图运行协议 v4.0。本仓库只在产物页明确要求代码视频版时接手，按代码视频路由执行；不保存生图机制正文。
+静态生图不在本仓库执行，只做想象瞬间图时直接走 Notion 生图运行协议 v4.0，并把数据记在 07 发布包。本仓库只在明确要求代码视频版时接手，按代码视频路由执行；不保存生图机制正文。
 
 ## 生产 manifest
 
@@ -104,7 +110,7 @@ content_line: "有解｜关系与处世 | 世界机制 | 想象瞬间｜Edge of 
 notion_output_url: "<产物页 URL>"
 ```
 
-其余字段沿用 `world-mechanism/engine/production-orchestrator/template-production.yaml`，包括来源、Must Preserve、当前阶段、renderer、资产、原型、QA、阻塞和 `codex.next_actions`。仓库完成后，通过 Notion MCP 回填产物库的 `发布链接`（逻辑上的“链接”字段）和 `状态=待发布`；不填写猜测数据。
+其余字段沿用 `world-mechanism/engine/production-orchestrator/template-production.yaml`，包括来源、Must Preserve、当前阶段、renderer、资产、原型、QA、阻塞和 `codex.next_actions`。对于贴图、长文和视频，仓库完成后通过 Notion MCP 回填产物库的 `发布链接`（逻辑上的“链接”字段）和 `状态=待发布`；想象瞬间图不在这里重复建产物库记录，不填写猜测数据。
 
 ## 技能与上游边界
 
